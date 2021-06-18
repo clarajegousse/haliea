@@ -1,5 +1,8 @@
 ##!/usr/bin/env bash
 
+WD=/users/home/cat3/projects/haliea
+cd $WD
+
 # get the assembly accession numbers for the cultivated strains
 cat data/cultivar-genomes-taxid.txt | while read -r taxid;
 do
@@ -18,11 +21,14 @@ cat data/cultivar-assemblies-acc.txt | cut -f 3 | while read -r acc ; do
     | xtract -pattern DocumentSummary -element FtpPath_GenBank \
     | while read -r url ;
       do
-      echo "$url/$fname"
+      #echo "$url/$fname"
       fname=$(echo $url | grep -o 'GCA_.*' | sed 's/$/_genomic.fna.gz/') ;
-      echo $fname
+      #echo $fname
       wget "$url/$fname"
-      zcat $fname > data/cultivar-genomes/$acc.fna
+      spname=$(zcat $fname | grep ">" | head -1 | cut -f 2,3 -d " " | sed 's/\ /-/i')
+      #echo $spname
+      zcat $fname > data/cultivar-genomes/$spname.fna
+      rm -f $fname
     done
 done
 

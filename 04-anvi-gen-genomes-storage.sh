@@ -29,4 +29,5 @@ done
 #cat external-genomes.txt
 
 anvi-gen-genomes-storage -e external-genomes.txt \
-                         -o HALIEA-GENOMES.db
+                         -o HALIEA-GENOMES.db \
+                         --gene-caller 'prodigal'

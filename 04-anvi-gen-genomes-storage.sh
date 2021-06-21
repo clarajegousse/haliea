@@ -28,6 +28,12 @@ do
 done
 #cat external-genomes.txt
 
+# # internal genomes (metabat bins)
+echo -e """name\tbin_id\tcollection_id\tprofile_db_path\tcontigs_db_path
+HIS200\tMETABAT__200\tmetabat2\t/users/work/cat3/projects/mime/results/coassembly/coassembly_wgs_surface/merge/PROFILE.db\t/users/work/cat3/projects/mime/results/coassembly/coassembly_wgs_surface/contigs.db
+HIS96\tMETABAT__96\tmetabat2\t/users/work/cat3/projects/mime/results/coassembly/coassembly_wgs_surface/merge/PROFILE.db\t/users/work/cat3/projects/mime/results/coassembly/coassembly_wgs_surface/contigs.db""" > internal-genomes.txt
+
+
 anvi-gen-genomes-storage -e data/external-genomes.txt \
   -i data/internal-genomes.txt \
   -o HALIEA-GENOMES.db \

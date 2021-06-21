@@ -8,6 +8,18 @@
 #SBATCH --ntasks-per-node=1
 
 
+echo $HOSTNAME
+
+# to insure work with python3
+source /users/home/cat3/.bashrc
+
+# activate environment
+conda activate anvio-master
+
+# go to working directory
+WD=/users/home/cat3/projects/haliea
+cd $WD
+
 CONTIGSDB="data/cultivar-genomes/*.db"
 for cdb in $CONTIGSDB
 do

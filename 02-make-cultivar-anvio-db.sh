@@ -7,11 +7,17 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
+echo $HOSTNAME
+
+# to insure work with python3
+source /users/home/cat3/.bashrc
+
+# activate environment
+conda activate anvio-master
+
+# go to working directory
 WD=/users/home/cat3/projects/haliea
 cd $WD
-
-# ----- CREATE ANVIO DB -----
-conda activate anvio-master
 
 CULTIVAR="data/cultivar-genomes/*.fna"
 for f in $CULTIVAR

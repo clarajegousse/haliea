@@ -1,0 +1,11 @@
+isolate	sea
+Chromatocurvus_halotolerans	Swan River Manitoba
+Congregibacter_litoralis	Heligoland Bight
+Haliea_rubra	Mediterranean Sea
+Haliea_salexigens	Sea
+Halioglobus_japonicus	Western North Pacific Ocean
+Halioglobus_pacificus	Western North Pacific Ocean
+Luminiphilus_syltensis	Sylt island
+Parahaliea_mediterranea	Mediterranean Sea
+HIS200	Icelandic Sea
+HIS96	Icelandic Sea

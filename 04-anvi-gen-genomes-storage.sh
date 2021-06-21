@@ -24,11 +24,11 @@ CONTIGSDB="data/haliea-isolates/*.db"
 for cdb in $CONTIGSDB
 do
   spname=$(echo $cdb | cut -f 3 -d "/" | cut -f 1 -d "." | sed 's/-/_/')
-  echo -e """$spname\t$cdb""" >> external-genomes.txt
+  echo -e """$spname\t$cdb""" >> data/external-genomes.txt
 done
 #cat external-genomes.txt
 
-anvi-gen-genomes-storage -e external-genomes.txt \
-  -i internal-genomes.txt \
+anvi-gen-genomes-storage -e data/external-genomes.txt \
+  -i data/internal-genomes.txt \
   -o HALIEA-GENOMES.db \
   --gene-caller 'prodigal'

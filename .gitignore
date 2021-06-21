@@ -2,4 +2,6 @@
 *.fa
 *.fa.gz
 *.db
-*.fna.hz
+*.fna.gz
+*.fasta
+*.fasta.gz

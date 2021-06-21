@@ -19,16 +19,16 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-CULTIVAR="data/cultivar-genomes/*.fna"
-for f in $CULTIVAR
+CULTIVAR="data/haliea-isolates/*.fna"
+for f in $FILES
 do
   echo "Processing $f file..."
   spname=$(echo $f | cut -f 3 -d "/" | cut -f 1 -d ".")
   anvi-script-reformat-fasta $f \
-    -o data/cultivar-genomes/$spname.fa \
+    -o data/haliea-isolates/$spname.fa \
     --simplify-names
 
-  anvi-gen-contigs-database -f data/cultivar-genomes/$spname.fa \
-  -o data/cultivar-genomes/$spname.db -T 8
+  anvi-gen-contigs-database -f data/haliea-isolates/$spname.fa \
+  -o data/haliea-isolates/$spname.db -T 8
 
 done

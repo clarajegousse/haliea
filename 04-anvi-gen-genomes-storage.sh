@@ -20,7 +20,7 @@ WD=/users/home/cat3/projects/haliea
 cd $WD
 
 echo -e "name\tcontigs_db_path" > external-genomes.txt
-CONTIGSDB="data/cultivar-genomes/*.db"
+CONTIGSDB="data/haliea-isolates/*.db"
 for cdb in $CONTIGSDB
 do
   spname=$(echo $cdb | cut -f 3 -d "/" | cut -f 1 -d "." | sed 's/-/_/')
@@ -32,8 +32,3 @@ anvi-gen-genomes-storage -e external-genomes.txt \
   -i internal-genomes.txt \
   -o HALIEA-GENOMES.db \
   --gene-caller 'prodigal'
-
-
-
-
-  

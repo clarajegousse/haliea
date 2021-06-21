@@ -19,7 +19,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-CONTIGSDB="data/cultivar-genomes/*.db"
+CONTIGSDB="data/haliea-isolates/*.db"
 for cdb in $CONTIGSDB
 do
   echo "Processing $cdb ..."

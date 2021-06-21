@@ -1,0 +1,4 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315861/ERR315861_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315861/ERR315861_2.fastq.gz

@@ -1,4 +1,4 @@
-##!/usr/bin/env bash
+#!/bin/bash
 #SBATCH --job-name=cultivar-db
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00

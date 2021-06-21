@@ -1,4 +1,4 @@
-##!/usr/bin/env bash
+#!/usr/bin/env bash
 
 WD=/users/home/cat3/projects/haliea
 cd $WD

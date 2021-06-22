@@ -18,17 +18,3 @@ conda activate anvio-master
 # go to working directory
 WD=/users/home/cat3/projects/haliea
 cd $WD
-
-FILES="data/haliea-genomes/*.fna"
-for f in $FILES
-do
-  echo "Processing $f file..."
-  spname=$(echo $f | cut -f 3 -d "/" | cut -f 1 -d ".")
-  anvi-script-reformat-fasta $f \
-    -o data/haliea-genomes/$spname.fa \
-    --simplify-names
-
-  anvi-gen-contigs-database -f data/haliea-genomes/$spname.fa \
-  -o data/haliea-genomes/$spname.db -T 8
-
-done

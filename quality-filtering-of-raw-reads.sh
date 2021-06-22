@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=cultivar-db
+#SBATCH --job-name=quality-filtering-of-raw-reads
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
@@ -18,3 +18,10 @@ conda activate anvio-master
 # go to working directory
 WD=/users/home/cat3/projects/haliea
 cd $WD
+
+iu-gen-configs $WD/data/samples.txt -o $WD/data/metagenomes
+for sample in `awk '{print $1}' $WD/data/samples.txt`
+do
+    if [ "$sample" == "sample" ]; then continue; fi
+    iu-filter-quality-minoche $WD/data/metagenomes/$sample.ini --ignore-deflines
+done

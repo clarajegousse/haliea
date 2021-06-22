@@ -3,6 +3,17 @@
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
+
+esearch -db genome -query "txid1706372[Organism:exp]"  </dev/null  |\
+efetch -format docsum |\
+xtract -pattern DocumentSummary \
+  -element TaxId,Organism_Name,Assembly_Accession,Status  |\
+  grep GCA | grep -v Bacteria | cut -f 1 | sort | uniq > data/halieaceae-genomes-taxid.txt
+
+sort data/isolates-genomes-taxid.txt | uniq > data/isolates-genomes-taxid.txt
+
+diff data/isolates-genomes-taxid.txt data/halieaceae-genomes-taxid.txt
+
 # get the assembly accession numbers for the cultivated strains
 cat data/isolates-genomes-taxid.txt | while read -r taxid;
 do

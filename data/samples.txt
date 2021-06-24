@@ -1,3 +1,5 @@
-sample     r1                            r2
-ANE_004_05M	ERR599003_1.fastq.gz,ERR598955_1.fastq.gz	ERR599003_2.fastq.gz,ERR598955_2.fastq.gz
-ANE_150_05M	ERR599170_1.fastq.gz	ERR599170_2.fastq.gz
+sample	r1	r2
+NADR_155_05M	ERR2762104_1.fastq.gz,ERR2762105_1.fastq.gz	ERR2762104_2.fastq.gz,ERR2762105_2.fastq.gz
+ARCT_158_05M	ERR2762110_1.fastq.gz,ERR2762111_1.fastq.gz	ERR2762110_2.fastq.gz,ERR2762111_2.fastq.gz
+BPLR_206_05M	ERR2762173_1.fastq.gz,ERR2762174_1.fastq.gz,ERR2762175_1.fastq.gz	ERR2762173_2.fastq.gz,ERR2762174_2.fastq.gz,ERR2762175_2.fastq.gz
+BPLR_208_05M	ERR2762176_1.fastq.gz,ERR2762177_1.fastq.gz	ERR2762176_2.fastq.gz,ERR2762177_2.fastq.gz

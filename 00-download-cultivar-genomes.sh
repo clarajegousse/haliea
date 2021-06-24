@@ -14,6 +14,7 @@ do
 done > data/isolates-assemblies-acc.txt
 
 # download the genomes
+mkdir -p $WD/data/isolates-genomes
 cat data/isolates-assemblies-acc.txt | cut -f 3 | while read -r acc ; do
   echo $acc
   esearch -db assembly -query $acc </dev/null \
@@ -56,6 +57,7 @@ do
 done > data/genomes-assemblies-acc.txt
 
 # download the genomes
+mkdir -p $WD/data/haliea-genomes
 cat data/genomes-assemblies-acc.txt | cut -f 3 | while read -r acc ; do
   echo $acc
   esearch -db assembly -query $acc </dev/null \

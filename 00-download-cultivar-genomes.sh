@@ -27,7 +27,7 @@ cat data/isolates-assemblies-acc.txt | cut -f 3 | while read -r acc ; do
       wget "$url/$fname"
       spname=$(zcat $fname | grep ">" | head -1 | cut -f 2,3 -d " " | sed 's/\ /-/i')
       #echo $spname
-      zcat $fname > data/cultivar-genomes/$spname.fna
+      zcat $fname > data/isolates-genomes/$spname.fna
       rm -f $fname
     done
 done

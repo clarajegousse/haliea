@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=cultivar-db
+#SBATCH --job-name=genomes-db
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
@@ -22,16 +22,15 @@ cd $WD
 FILES="data/haliea-genomes/*.fna"
 for f in $FILES
 do
-  echo "Processing $f file..."
-  spname=$(echo $f | cut -f 3 -d "/" | cut -f 1 -d ".")
-  anvi-script-reformat-fasta $f \
-    -o data/haliea-genomes/$spname.fa \
-    --simplify-names
+	echo "Processing $f file..."
+	spname=$(echo $f | cut -f 3 -d "/" | cut -f 1 -d ".")
+	anvi-script-reformat-fasta $f \
+	-o data/haliea-genomes/$spname.fa \
+	--simplify-names --prefix $spname
 
-  anvi-gen-contigs-database -f data/haliea-genomes/$spname.fa \
-  -o data/haliea-genomes/$spname.db -T 8
+	anvi-gen-contigs-database -f data/haliea-genomes/$spname.fa \
+	-o data/haliea-genomes/$spname.db -T 8
 done
 
-cat $WD/data/haliea-genomes/*.fna > haliea-genomes.fa
-anvi-gen-contigs-database -f haliea-genomes.fa \
-                          -o HALIEA-CONTIGS.db
+# anvi-gen-contigs-database -f haliea-genomes.fa \
+#                           -o HALIEA-CONTIGS.db

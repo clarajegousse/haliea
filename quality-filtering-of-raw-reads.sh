@@ -19,9 +19,9 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-iu-gen-configs $WD/data/samples.txt -o $WD/data/metagenomes
-for sample in `awk '{print $1}' $WD/data/samples.txt`
+iu-gen-configs samples.txt
+for sample in `awk '{print $1}' samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
-    iu-filter-quality-minoche $WD/data/metagenomes/$sample.ini --ignore-deflines
+    iu-filter-quality-minoche $sample.ini --ignore-deflines
 done

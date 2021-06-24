@@ -24,9 +24,10 @@ for f in $FILES
 do
 	echo "Processing $f file..."
 	spname=$(echo $f | cut -f 3 -d "/" | cut -f 1 -d ".")
+	prefix=$(echo $spname | sed 's/-/_/')
 	anvi-script-reformat-fasta $f \
 	-o data/haliea-genomes/$spname.fa \
-	--simplify-names --prefix $spname
+	--simplify-names --prefix $prefix
 
 	anvi-gen-contigs-database -f data/haliea-genomes/$spname.fa \
 	-o data/haliea-genomes/$spname.db -T 8

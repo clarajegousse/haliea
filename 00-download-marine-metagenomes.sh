@@ -7,7 +7,12 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
-cd data/metagenomes
+echo $HOSTNAME
+
+# set working directory
+WD=/users/home/cat3/projects/haliea
+
+cd $WD/data/metagenomes
 for url in `cat ../ftp-links-for-raw-data-files2.txt`
 do
     wget $url

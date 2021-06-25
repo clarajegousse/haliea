@@ -33,5 +33,6 @@ do
 	-o data/haliea-genomes/$spname.db -T 8
 done
 
-# anvi-gen-contigs-database -f haliea-genomes.fa \
-#                           -o HALIEA-CONTIGS.db
+cat *.fa > haliea-genomes.fa
+anvi-gen-contigs-database -f haliea-genomes.fa \
+                          -o HALIEA-CONTIGS.db

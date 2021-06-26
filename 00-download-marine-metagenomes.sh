@@ -18,3 +18,12 @@ do
 	echo $url
     wget $url
 done
+
+
+esearch -db sra -query ERR2762177 | efetch --format docsum
+esearch -db sra -query ERR2762177 \
+| esummary \
+| xtract -pattern DocumentSummary -element FtpPath_GenBank \
+| while read -r url ;
+
+prefetch ERR2762177

@@ -19,10 +19,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-
-
 bowtie2-build haliea-genomes.fa haliea-genomes
-conda deactivate
 
 for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
 do

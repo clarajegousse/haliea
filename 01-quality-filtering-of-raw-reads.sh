@@ -24,4 +24,5 @@ for sample in `awk '{print $1}' samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
     iu-filter-quality-minoche $sample.ini --ignore-deflines
+	gzip $sample-QUALITY_PASSED_R1.fastq
 done

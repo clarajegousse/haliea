@@ -19,11 +19,13 @@ do
     wget $url
 done
 
+#
+# esearch -db sra -query ERR2762177 | efetch --format docsum
+# esearch -db sra -query ERR2762177 \
+# | esummary \
+# | xtract -pattern DocumentSummary -element FtpPath_GenBank \
+# | while read -r url ;
+#
+# prefetch ERR2762177
 
-esearch -db sra -query ERR2762177 | efetch --format docsum
-esearch -db sra -query ERR2762177 \
-| esummary \
-| xtract -pattern DocumentSummary -element FtpPath_GenBank \
-| while read -r url ;
-
-prefetch ERR2762177
+# scp -i ~/.ssh/id_rsa_ihpc /Users/Clara/Desktop/data/ERR2762180_1.fastq.gz cat3@garpur.ihpc.hi.is:/users/work/cat3/projects/haliea/data/metagenomes/

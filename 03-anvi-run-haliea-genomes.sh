@@ -18,7 +18,18 @@ conda activate anvio-master
 # go to working directory
 WD=/users/home/cat3/projects/haliea
 cd $WD
+mkdir -p $WD/summaries
 
 anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -T 8 --also-scan-trnas
 anvi-run-pfams -c $WD/HALIEA-CONTIGS.db -T 8
 anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db -T 8  --sensitive
+
+
+anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db --list-gene-callers
+
+anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
+	--gene-caller 'prodigal' \
+	-o $WD/summaries/gene_calls_summary.txt
+
+anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
+	--gene-caller 'Ribosomal_RNA_16S' -o $WD/summaries/Ribosomal_RNA_16S_summary.txt

@@ -21,6 +21,7 @@ for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 
+	echo $sample
     # covert the resulting SAM file to a BAM file:
     samtools view -F 4 -bS $WD/data/metagenomes/$sample.sam > $WD/data/metagenomes/$sample-RAW.bam
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=bowtie2
+#SBATCH --job-name=profiling
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
@@ -19,16 +19,13 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-bowtie2-build haliea-genomes.fa haliea-genomes
-
 for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
-    # do the bowtie mapping to get the SAM file:
-    bowtie2 --threads 12 \
-            -x haliea-genomes \
-            -1 $WD/data/metagenomes/$sample-QUALITY_PASSED_R1.fastq \
-            -2 $WD/data/metagenomes/$sample-QUALITY_PASSED_R2.fastq \
-            --no-unal \
-            -S $WD/data/metagenomes/$sample.sam
+
+    anvi-profile -c $WD/HALIEA-CONTIGS.db \
+                 -i $WD/data/metagenomes/$sample.bam \
+                 --profile-AA-frequencies \
+                 --num-threads 12 \
+                 -o $sample
 done

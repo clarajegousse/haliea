@@ -28,4 +28,4 @@ done
 #
 # prefetch ERR2762177
 
-# scp -i ~/.ssh/id_rsa_ihpc /Users/Clara/Desktop/data/ERR2762180_1.fastq.gz cat3@garpur.ihpc.hi.is:/users/work/cat3/projects/haliea/data/metagenomes/
+# scp -i ~/.ssh/id_rsa_ihpc /Users/Clara/Desktop/data/ERR2762180_2.fastq.gz cat3@garpur.ihpc.hi.is:/users/work/cat3/projects/haliea/data/metagenomes/

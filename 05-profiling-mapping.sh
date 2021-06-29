@@ -25,7 +25,7 @@ do
 
     anvi-profile -c $WD/HALIEA-CONTIGS.db \
                  -i $WD/data/metagenomes/$sample.bam \
-                 --profile-AA-frequencies \
+				 --profile-SCVs \
                  --num-threads 12 \
                  -o $sample
 done

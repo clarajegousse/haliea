@@ -1,8 +1,0 @@
-1132028	Chromatocurvus halotolerans	GCA_004340525.1	Draft
-393662	Congregibacter litoralis	GCA_000153125.2	Draft
-287487	Haliea salexigens	GCA_000423125.1	Draft
-930805	Halioglobus japonicus	GCA_002869505.1	Draft
-930806	Halioglobus pacificus	GCA_014652275.1	Complete
-565045	Luminiphilus syltensis NOR5-1B	GCA_000158175.1	Draft
-651086	Parahaliea mediterranea	GCA_003402235.1	Draft
-475795	Pseudohaliea rubra	GCA_000764025.1	Draft

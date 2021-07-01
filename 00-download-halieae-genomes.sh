@@ -1,4 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
+#SBATCH --job-name=download-haliea-gen
+#SBATCH -p normal
+#SBATCH --time=2-00:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=cat3@hi.is
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
 
 WD=/users/home/cat3/projects/haliea/data
 cd $WD

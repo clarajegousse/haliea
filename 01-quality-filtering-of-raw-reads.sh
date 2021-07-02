@@ -17,6 +17,7 @@ conda activate anvio-master
 
 # go to working directory
 WD=/users/home/cat3/projects/haliea
+cd $WD/00-tara-metagenomes
 
 iu-gen-configs $WD/00-tara-metagenomes/samples.txt -o $WD/01-qc-tara-metagenomes
 

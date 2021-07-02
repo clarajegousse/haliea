@@ -24,6 +24,6 @@ for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
-    iu-filter-quality-minoche $WD/00-tara-metagenomes/$sample.ini --ignore-deflines
+    iu-filter-quality-minoche $WD/01-qc-tara-metagenomes/$sample.ini --ignore-deflines
 	gzip $WD/00-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq
 done

@@ -19,9 +19,9 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/00-tara-metagenomes
 
-iu-gen-configs $WD/00-tara-metagenomes/samples.txt -o $WD/01-qc-tara-metagenomes
+iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
 
-for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
+for sample in `awk '{print $1}' samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample

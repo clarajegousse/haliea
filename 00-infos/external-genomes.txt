@@ -1,0 +1,9 @@
+name	contigs_db_path
+Chromatocurvus_halotolerans	data/cultivar-genomes/Chromatocurvus-halotolerans.db
+Congregibacter_litoralis	data/cultivar-genomes/Congregibacter-litoralis.db
+Haliea_rubra	data/cultivar-genomes/Haliea-rubra.db
+Haliea_salexigens	data/cultivar-genomes/Haliea-salexigens.db
+Halioglobus_japonicus	data/cultivar-genomes/Halioglobus-japonicus.db
+Halioglobus_pacificus	data/cultivar-genomes/Halioglobus-pacificus.db
+Luminiphilus_syltensis	data/cultivar-genomes/Luminiphilus-syltensis.db
+Parahaliea_mediterranea	data/cultivar-genomes/Parahaliea-mediterranea.db

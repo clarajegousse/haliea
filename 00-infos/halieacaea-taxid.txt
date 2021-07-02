@@ -1,0 +1,120 @@
+2847769	Aequoribacter
+2814537	Haliea sp. AH-315-K21
+2758564	Parahaliea sp. F7430
+2744308	Congregibacter sp.
+2740289	Pseudohaliea sp.
+2735679	uncultured Halieaceae bacterium
+2716870	Parahaliea maris
+2708301	Kineobactrum salinum
+2678529	Kineobactrum
+2664051	Congregibacter sp. SCGC MDAA20
+2664050	unclassified Congregibacter
+2643678	unclassified Parahaliea
+2633198	unclassified Luminiphilus
+2628030	unclassified Chromatocurvus
+2619267	unclassified Pseudohaliea
+2618068	unclassified Halioglobus
+2615003	Haliea sp. ZB2186
+2615002	unclassified Haliea
+2606449	Halioglobus sp. NY5
+2601894	Halioglobus maricola
+2590574	Luminiphilus sp.
+2562682	Haliea sp. SAOS-164
+2547392	Halieaceae bacterium GH4-78
+2518989	Aequoribacter fuscus
+2448162	Haliea alexandrii
+2283635	Halioglobus sediminis
+2026743	Halieaceae bacterium
+2024834	Halioglobus sp.
+2004505	Parahaliea sp.
+2003369	Chromatocurvus sp.
+1986254	Halieaceae bacterium MED-G27
+1986253	Halieaceae bacterium MED-G26
+1951923	Halieaceae bacterium UBA7381
+1951922	Halieaceae bacterium UBA6519
+1951921	Halieaceae bacterium UBA6060
+1951920	Halieaceae bacterium UBA5721
+1951919	Halieaceae bacterium UBA5105
+1951918	Halieaceae bacterium UBA5085
+1951917	Halieaceae bacterium UBA5055
+1951916	Halieaceae bacterium UBA5044
+1951915	Halieaceae bacterium UBA4500
+1951914	Halieaceae bacterium UBA4469
+1951913	Halieaceae bacterium UBA4452
+1951912	Halieaceae bacterium UBA4438
+1951911	Halieaceae bacterium UBA4423
+1951910	Halieaceae bacterium UBA4216
+1951909	Halieaceae bacterium UBA4019
+1951908	Halieaceae bacterium UBA3993
+1951907	Halieaceae bacterium UBA3479
+1951906	Halieaceae bacterium UBA3444
+1951905	Halieaceae bacterium UBA3188
+1951904	Halieaceae bacterium UBA3187
+1951903	Halieaceae bacterium UBA3099
+1951902	Halieaceae bacterium UBA3019
+1951901	Halieaceae bacterium UBA2614
+1932666	Haliea sp.
+1905677	Kineobactrum sediminis
+1859440	Pseudohaliea sp. KC72
+1859380	Chromatocurvus sp. KC71
+1857947	uncultured Parahaliea sp.
+1857946	environmental samples
+1857932	Parahaliea
+1852021	Parahaliea aestuarii
+1822214	Halioglobus sp. HI00S01
+1778479	Halieaceae bacterium LSUCC0247
+1778478	Halieaceae bacterium LSUCC0045
+1763473	Marimicrobium
+1737061	Halioglobus lutimaris
+1706379	unclassified Halieaceae
+1706372	Halieaceae
+1655483	uncultured Luminiphilus sp.
+1655482	environmental samples
+1570281	Marimicrobium arenosum
+1548455	Haliea atlantica
+1492713	uncultured Halioglobus sp.
+1492712	environmental samples
+1341120	Pseudohaliea
+1341119	Luminiphilus syltensis
+1341118	Luminiphilus
+1337835	OM60 clade bacterium DG1534
+1337834	OM60 clade bacterium DG1477
+1329368	Haliea sp. YIM-QH111A
+1265313	Pseudohaliea rubra DSM 19751
+1217416	Halioglobus
+1132028	Chromatocurvus halotolerans
+1132027	Chromatocurvus
+1125455	OM60 cluster bacterium enrichment culture clone PSHTC-032
+1121937	Haliea salexigens DSM 19537
+1118067	uncultured OM60 clade bacterium
+1055106	Haliea sp. ETY-NAG
+1055105	Haliea sp. ETY-M
+995046	Haliea sp. DSW4-37
+995045	Haliea sp. DSW4-36
+930806	Halioglobus pacificus
+930805	Halioglobus japonicus
+745014	gamma proteobacterium HIMB55
+744997	environmental samples
+742053	Haliea sp. SY02
+670726	uncultured Congregibacter sp.
+670725	environmental samples
+651086	Parahaliea mediterranea
+622616	uncultured Haliea sp.
+622615	environmental samples
+565045	Luminiphilus syltensis NOR5-1B
+523642	Haliea sp. MOLA 104
+475795	Pseudohaliea rubra
+475794	Haliea
+393662	Congregibacter litoralis
+393661	Congregibacter
+314285	Congregibacter litoralis KT71
+287487	Haliea salexigens
+247639	marine gamma proteobacterium HTCC2080
+247637	marine gamma proteobacterium HTCC2246
+247636	marine gamma proteobacterium HTCC2223
+247634	marine gamma proteobacterium HTCC2148
+247631	marine gamma proteobacterium HTCC2149
+198012	marine gamma proteobacterium HTCC227
+196822	Arctic sea ice bacterium ARK10038
+120672	uncultured gamma proteobacterium KTc1119
+103309	uncultured gamma proteobacterium TIHP368-52

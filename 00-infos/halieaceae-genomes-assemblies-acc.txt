@@ -1,0 +1,174 @@
+2518989	Aequoribacter fuscus	Draft
+475794	Haliea	Draft
+2	Bacteria	GCA_017571525.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+2716870	Parahaliea maris	Draft
+2708301	Kineobactrum salinum	GCA_010669285.1	Complete
+2708301	Kineobactrum salinum	GCA_010669285.1	Complete
+1905677	Kineobactrum sediminis	GCA_002868715.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+1217416	Halioglobus	Draft
+475794	Haliea	Draft
+1217416	Halioglobus	Draft
+2601894	Halioglobus maricola	GCA_009388985.1	Complete
+2	Bacteria	GCA_017571525.1	Draft
+475794	Haliea	Draft
+2547392	Halieaceae bacterium GH4-78	Draft
+2518989	Aequoribacter fuscus	Draft
+2448162	Haliea alexandrii	GCA_003719295.1	Draft
+2283635	Halioglobus sediminis	GCA_003457605.1	Draft
+2026743	Halieaceae bacterium	Draft
+1217416	Halioglobus	Draft
+1986254	Halieaceae bacterium MED-G27	Draft
+1986253	Halieaceae bacterium MED-G26	Draft
+1951923	Halieaceae bacterium UBA7381	Draft
+1951922	Halieaceae bacterium UBA6519	Draft
+1951921	Halieaceae bacterium UBA6060	Draft
+1951920	Halieaceae bacterium UBA5721	Draft
+1951919	Halieaceae bacterium UBA5105	Draft
+1951918	Halieaceae bacterium UBA5085	Draft
+1951917	Halieaceae bacterium UBA5055	Draft
+1951916	Halieaceae bacterium UBA5044	Draft
+1951915	Halieaceae bacterium UBA4500	Draft
+1951914	Halieaceae bacterium UBA4469	Draft
+1951913	Halieaceae bacterium UBA4452	Draft
+1951912	Halieaceae bacterium UBA4438	Draft
+1951911	Halieaceae bacterium UBA4423	Draft
+1951910	Halieaceae bacterium UBA4216	Draft
+1951909	Halieaceae bacterium UBA4019	Draft
+1951908	Halieaceae bacterium UBA3993	Draft
+1951907	Halieaceae bacterium UBA3479	Draft
+1951906	Halieaceae bacterium UBA3444	Draft
+1951905	Halieaceae bacterium UBA3188	Draft
+1951904	Halieaceae bacterium UBA3187	Draft
+1951903	Halieaceae bacterium UBA3099	Draft
+1951902	Halieaceae bacterium UBA3019	Draft
+1951901	Halieaceae bacterium UBA2614	Draft
+475794	Haliea	Draft
+1905677	Kineobactrum sediminis	GCA_002868715.1	Draft
+2716870	Parahaliea maris	Draft
+1852021	Parahaliea aestuarii	GCA_008064635.1	Draft
+651086	Parahaliea mediterranea	GCA_003402235.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+1852021	Parahaliea aestuarii	GCA_008064635.1	Draft
+1217416	Halioglobus	Draft
+1737061	Halioglobus lutimaris	GCA_002866825.1	Draft
+2547392	Halieaceae bacterium GH4-78	Draft
+2026743	Halieaceae bacterium	Draft
+1951923	Halieaceae bacterium UBA7381	Draft
+1986254	Halieaceae bacterium MED-G27	Draft
+1986253	Halieaceae bacterium MED-G26	Draft
+1951922	Halieaceae bacterium UBA6519	Draft
+1951921	Halieaceae bacterium UBA6060	Draft
+1951920	Halieaceae bacterium UBA5721	Draft
+1951916	Halieaceae bacterium UBA5044	Draft
+1951917	Halieaceae bacterium UBA5055	Draft
+1951918	Halieaceae bacterium UBA5085	Draft
+1951919	Halieaceae bacterium UBA5105	Draft
+1951912	Halieaceae bacterium UBA4438	Draft
+1951914	Halieaceae bacterium UBA4469	Draft
+1951911	Halieaceae bacterium UBA4423	Draft
+1951913	Halieaceae bacterium UBA4452	Draft
+1951915	Halieaceae bacterium UBA4500	Draft
+1951908	Halieaceae bacterium UBA3993	Draft
+1951909	Halieaceae bacterium UBA4019	Draft
+1951910	Halieaceae bacterium UBA4216	Draft
+1951906	Halieaceae bacterium UBA3444	Draft
+1951907	Halieaceae bacterium UBA3479	Draft
+1951903	Halieaceae bacterium UBA3099	Draft
+1951904	Halieaceae bacterium UBA3187	Draft
+1951905	Halieaceae bacterium UBA3188	Draft
+1951902	Halieaceae bacterium UBA3019	Draft
+1951901	Halieaceae bacterium UBA2614	Draft
+745014	gamma proteobacterium HIMB55	Draft
+247634	marine gamma proteobacterium HTCC2148	Draft
+247639	marine gamma proteobacterium HTCC2080	Draft
+2716870	Parahaliea maris	Draft
+1118067	uncultured OM60 clade bacterium	Draft
+2708301	Kineobactrum salinum	GCA_010669285.1	Complete
+2283635	Halioglobus sediminis	GCA_003457605.1	Draft
+2601894	Halioglobus maricola	GCA_009388985.1	Complete
+1905677	Kineobactrum sediminis	GCA_002868715.1	Draft
+2518989	Aequoribacter fuscus	Draft
+1852021	Parahaliea aestuarii	GCA_008064635.1	Draft
+2547392	Halieaceae bacterium GH4-78	Draft
+2448162	Haliea alexandrii	GCA_003719295.1	Draft
+1132028	Chromatocurvus halotolerans	GCA_004340525.1	Draft
+651086	Parahaliea mediterranea	GCA_003402235.1	Draft
+1737061	Halioglobus lutimaris	GCA_002866825.1	Draft
+475794	Haliea	Draft
+2026743	Halieaceae bacterium	Draft
+1951923	Halieaceae bacterium UBA7381	Draft
+1986254	Halieaceae bacterium MED-G27	Draft
+1986253	Halieaceae bacterium MED-G26	Draft
+1951922	Halieaceae bacterium UBA6519	Draft
+1951921	Halieaceae bacterium UBA6060	Draft
+1951920	Halieaceae bacterium UBA5721	Draft
+1951916	Halieaceae bacterium UBA5044	Draft
+1951917	Halieaceae bacterium UBA5055	Draft
+1951918	Halieaceae bacterium UBA5085	Draft
+1951919	Halieaceae bacterium UBA5105	Draft
+1951912	Halieaceae bacterium UBA4438	Draft
+1951914	Halieaceae bacterium UBA4469	Draft
+1951911	Halieaceae bacterium UBA4423	Draft
+1951913	Halieaceae bacterium UBA4452	Draft
+1951915	Halieaceae bacterium UBA4500	Draft
+1951908	Halieaceae bacterium UBA3993	Draft
+1951909	Halieaceae bacterium UBA4019	Draft
+1951910	Halieaceae bacterium UBA4216	Draft
+1951906	Halieaceae bacterium UBA3444	Draft
+1951907	Halieaceae bacterium UBA3479	Draft
+1951903	Halieaceae bacterium UBA3099	Draft
+1951904	Halieaceae bacterium UBA3187	Draft
+1951905	Halieaceae bacterium UBA3188	Draft
+1951902	Halieaceae bacterium UBA3019	Draft
+1951901	Halieaceae bacterium UBA2614	Draft
+930805	Halioglobus japonicus	GCA_002869505.1	Draft
+930806	Halioglobus pacificus	GCA_014652275.1	Complete
+1217416	Halioglobus	Draft
+2	Bacteria	GCA_017571525.1	Draft
+287487	Haliea salexigens	GCA_000423125.1	Draft
+475795	Pseudohaliea rubra	GCA_000764025.1	Draft
+745014	gamma proteobacterium HIMB55	Draft
+565045	Luminiphilus syltensis NOR5-1B	GCA_000158175.1	Draft
+247634	marine gamma proteobacterium HTCC2148	Draft
+393662	Congregibacter litoralis	GCA_000153125.2	Draft
+247639	marine gamma proteobacterium HTCC2080	Draft
+2	Bacteria	GCA_017571525.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+1217416	Halioglobus	Draft
+1217416	Halioglobus	Draft
+475795	Pseudohaliea rubra	GCA_000764025.1	Draft
+565045	Luminiphilus syltensis NOR5-1B	GCA_000158175.1	Draft
+2	Bacteria	GCA_017571525.1	Draft
+565045	Luminiphilus syltensis NOR5-1B	GCA_000158175.1	Draft
+475795	Pseudohaliea rubra	GCA_000764025.1	Draft
+2283635	Halioglobus sediminis	GCA_003457605.1	Draft
+2601894	Halioglobus maricola	GCA_009388985.1	Complete
+1737061	Halioglobus lutimaris	GCA_002866825.1	Draft
+930805	Halioglobus japonicus	GCA_002869505.1	Draft
+930806	Halioglobus pacificus	GCA_014652275.1	Complete
+1217416	Halioglobus	Draft
+1132028	Chromatocurvus halotolerans	GCA_004340525.1	Draft
+1132028	Chromatocurvus halotolerans	GCA_004340525.1	Draft
+287487	Haliea salexigens	GCA_000423125.1	Draft
+1118067	uncultured OM60 clade bacterium	Draft
+930806	Halioglobus pacificus	GCA_014652275.1	Complete
+930805	Halioglobus japonicus	GCA_002869505.1	Draft
+745014	gamma proteobacterium HIMB55	Draft
+1118067	uncultured OM60 clade bacterium	Draft
+651086	Parahaliea mediterranea	GCA_003402235.1	Draft
+565045	Luminiphilus syltensis NOR5-1B	GCA_000158175.1	Draft
+475795	Pseudohaliea rubra	GCA_000764025.1	Draft
+2448162	Haliea alexandrii	GCA_003719295.1	Draft
+475794	Haliea	Draft
+287487	Haliea salexigens	GCA_000423125.1	Draft
+393662	Congregibacter litoralis	GCA_000153125.2	Draft
+2	Bacteria	GCA_017571525.1	Draft
+393662	Congregibacter litoralis	GCA_000153125.2	Draft
+393662	Congregibacter litoralis	GCA_000153125.2	Draft
+287487	Haliea salexigens	GCA_000423125.1	Draft
+247639	marine gamma proteobacterium HTCC2080	Draft
+247634	marine gamma proteobacterium HTCC2148	Draft

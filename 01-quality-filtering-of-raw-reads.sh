@@ -26,6 +26,6 @@ do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
     iu-filter-quality-minoche $WD/01-qc-tara-metagenomes/$sample.ini --ignore-deflines
-	gzip $WD/00-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq
-	gzip $WD/00-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq
+	gzip $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq
+	gzip $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq
 done

@@ -1,0 +1,3 @@
+sample	r1	r2
+ARCT_163_MES	ERR2762112_1.fastq.gz,ERR2762113_1.fastq.gz	ERR2762112_2.fastq.gz,ERR2762113_2.fastq.gz
+ARCT_163_SRF	ERR2762114_1.fastq.gz,ERR2762115_1.fastq.gz	ERR2762114_2.fastq.gz,ERR2762115_2.fastq.gz

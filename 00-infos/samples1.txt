@@ -1,0 +1,3 @@
+sample	r1	r2
+SARC_158_MES	ERR2762108_1.fastq.gz,ERR2762109_1.fastq.gz	ERR2762108_2.fastq.gz,ERR2762109_2.fastq.gz
+SARC_158_SRF	ERR2762110_1.fastq.gz,ERR2762111_1.fastq.gz	ERR2762110_2.fastq.gz,ERR2762111_2.fastq.gz

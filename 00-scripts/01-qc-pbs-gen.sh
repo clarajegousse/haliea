@@ -10,9 +10,9 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/00-tara-metagenomes
 
-iu-gen-configs samples-subset.txt -o $WD/01-qc-tara-metagenomes
+iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
 
-for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples-subset.txt`
+for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
@@ -31,5 +31,5 @@ do
 	WD=/users/home/cat3/projects/haliea
 	cd $WD/00-tara-metagenomes
 	iu-filter-quality-minoche $WD/01-qc-tara-metagenomes/'$sample'.ini --ignore-deflines
-	''' > $WD/01-qc-tara-metagenomes/01-qc-$sample.sh
+	''' > $WD/01-qc-tara-metagenomes/$sample'-qc-pbs.sh'
 done

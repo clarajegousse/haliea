@@ -10,7 +10,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/00-tara-metagenomes
 
-for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples-subset.txt`
+for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
@@ -30,5 +30,5 @@ do
 	cd $WD/00-tara-metagenomes
 	#gzip $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R1.fastq
 	#gzip $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R2.fastq
-	''' > $WD/01-qc-tara-metagenomes/01-compress-$sample.sh
+	''' > $WD/01-qc-tara-metagenomes/$sample'-gzip-pbs.sh'
 done

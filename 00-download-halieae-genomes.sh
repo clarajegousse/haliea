@@ -7,7 +7,8 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
-WD=/users/home/cat3/projects/haliea/data
+WD=/users/home/cat3/projects/haliea/00-halieacaea-genomes
+mkdir -p $WD
 cd $WD
 
 esearch -db taxonomy -query "txid1706372[Subtree]" |\
@@ -26,7 +27,6 @@ do
 done > halieaceae-genomes-assemblies-acc.txt
 
 # download the genomes
-mkdir -p $WD/halieaceae-genomes
 cat halieaceae-genomes-assemblies-acc.txt | grep "GCA\_" | grep "Complete" | sort | uniq | cut -f 3 | while read -r acc ; do
   echo $acc
   esearch -db assembly -query $acc </dev/null \
@@ -40,7 +40,7 @@ cat halieaceae-genomes-assemblies-acc.txt | grep "GCA\_" | grep "Complete" | sor
       wget "$url/$fname"
       spname=$(zcat $fname | grep ">" | head -1 | cut -f 2,3 -d " " | sed 's/\ /-/i')
       #echo $spname
-      zcat $fname > halieaceae-genomes/$spname.fna
+      zcat $fname > $spname.fna
       rm -f $fname
     done
 done

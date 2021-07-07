@@ -18,7 +18,7 @@ map <- ggplot() +
 map
 
 # import longhurst provinces
-longhurst <- sf::read_sf("/Users/Clara/Desktop/longhurst_v4_2010/Longhurst_world_v4_2010.shx")
+longhurst <- sf::read_sf("/Users/Clara/Projects/haliea/00-infos/longhurst-world-v4-2010.shx")
 names(longhurst)
 head(longhurst)
 
@@ -34,8 +34,15 @@ col <- as.data.frame(cbind(longhurst$ProvCode, rep(MediumGrey, 54)))
 colnames(col) <- c("code", "value")
 
 col[col$code == "BPLR",]$value <- Jeans
+col[col$code == "APLR",]$value <- Jeans
 col[col$code == "ARCT",]$value <- Aqua
+col[col$code == "ANTA",]$value <- Aqua
+col[col$code == "ALSK",]$value <- Aqua
 col[col$code == "SARC",]$value <- Mint
+col[col$code == "SANT",]$value <- Mint
+col[col$code == "NADR",]$value <- Sunflower
+col[col$code == "NECS",]$value <- Sunflower
+col[col$code == "MEDI",]$value <- Orange
 
 # draw map with Longhurst provinces
 map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
@@ -45,4 +52,5 @@ map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", 
   geom_sf_text(data = longhurst %>% group_by(ProvCode) %>% summarize(n()), aes(label = ProvCode),
                colour = DarkGrey, check_overlap = TRUE)+
   coord_sf(expand = FALSE) +
-  geom_point(aes(x = 66.51 , y = 79.20, colour = "red"))
+  geom_point(aes(x = -154.94 , y = 71.92, colour = "red")) 
+

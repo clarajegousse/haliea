@@ -15,7 +15,7 @@ do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
 	echo '''#!/bin/bash
-	#SBATCH --job-name=qc-'$sample'
+	#SBATCH --job-name=gzip-'$sample'
 	#SBATCH -p normal
 	#SBATCH --time=3-00:00:00
 	#SBATCH --mail-type=ALL

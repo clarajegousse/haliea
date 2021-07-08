@@ -19,7 +19,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-mkdir -p $WD/01-halieacaea-dbs
+mkdir -p $WD/01-halieaceae-dbs
 
 FILES=$WD/00-halieaceae-genomes/*.fna
 for f in $FILES
@@ -32,9 +32,9 @@ do
 	--simplify-names --prefix $prefix
 
 	anvi-gen-contigs-database -f $WD'/00-halieaceae-genomes/'$spname'.fa' \
-	-o $WD'/01-halieacaea-dbs/'$spname'.db' -T 8
+	-o $WD'/01-halieaceae-dbs/'$spname'.db' -T 8
 done
 
-cat $WD'/00-halieaceae-genomes/'$spname'.fa' > $WD'/01-halieaceae-dbs/haliea-genomes.fa'
-anvi-gen-contigs-database -f $WD'/01-halieaceae-dbs/haliea-genomes.fa' \
-                          -o $WD'/01-halieaceae-dbs/HALIEA-CONTIGS.db'
+cat $WD/00-halieaceae-genomes/*.fa > $WD/01-halieaceae-dbs/haliea-genomes.fa
+anvi-gen-contigs-database -f $WD/01-halieaceae-dbs/haliea-genomes.fa \
+                          -o $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db -T 8 -n 'Haliceaceae genomes'

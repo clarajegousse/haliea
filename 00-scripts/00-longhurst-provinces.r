@@ -52,5 +52,5 @@ map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", 
   geom_sf_text(data = longhurst %>% group_by(ProvCode) %>% summarize(n()), aes(label = ProvCode),
                colour = DarkGrey, check_overlap = TRUE)+
   coord_sf(expand = FALSE) +
-  geom_point(aes(x = -72.02 , y = 72.37, colour = "red")) 
+  geom_point(aes(x = -51.64 , y = 69.11, colour = "red")) 
 

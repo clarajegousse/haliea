@@ -7,27 +7,27 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
-WD=/users/home/cat3/projects/haliea/00-halieacaea-genomes
+WD=/users/home/cat3/projects/haliea/00-halieaceae-genomes
 mkdir -p $WD
 cd $WD
 
 esearch -db taxonomy -query "txid1706372[Subtree]" |\
  efetch -format xml |\
  xtract -pattern Taxon \
- 	-element TaxId,ScientificName > halieacaea-taxid.txt
+ 	-element TaxId,ScientificName > taxids.txt
 
-# get the assembly accession numbers for the cultivated strains according to the DMSZ
-cat halieacaea-taxid.txt | cut -f 1 | while read -r taxid;
+# get the assembly accession numbers for the list of taxid
+cat taxids.txt | cut -f 1 | while read -r taxid;
 do
   esearch -db genome -query "txid"$taxid"[Organism:exp]" </dev/null |\
     efetch -format docsum |\
     xtract -pattern DocumentSummary \
       -element TaxId,Organism_Name,Assembly_Accession,Status;
   #esearch -db genome -query "txid"$taxid"[Organism:exp]"
-done > halieaceae-genomes-assemblies-acc.txt
+done > assemblies.txt
 
 # download the genomes
-cat halieaceae-genomes-assemblies-acc.txt | grep "GCA\_" | grep -v "Bacteria" | sort | uniq | cut -f 3 | while read -r acc ; do
+cat assemblies.txt | grep "GCA\_" | grep -v "Bacteria" | sort | uniq | cut -f 3 | while read -r acc ; do
   echo $acc
   esearch -db assembly -query $acc </dev/null \
     | esummary \

@@ -19,20 +19,20 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-FILES="data/haliea-genomes/*.fna"
+FILES=$WD"/00-halieacaea-genomes/*.fna"
 for f in $FILES
 do
 	echo "Processing $f file..."
 	spname=$(echo $f | cut -f 3 -d "/" | cut -f 1 -d ".")
 	prefix=$(echo $spname | sed 's/-/_/')
 	anvi-script-reformat-fasta $f \
-	-o data/haliea-genomes/$spname.fa \
+	-o $WD/00-halieacaea-genomes/$spname.fa \
 	--simplify-names --prefix $prefix
 
-	anvi-gen-contigs-database -f data/haliea-genomes/$spname.fa \
-	-o data/haliea-genomes/$spname.db -T 8
+	anvi-gen-contigs-database -f $WD/00-halieacaea-genomes/$spname.fa \
+	-o $WD/01-halieacaea-dbs/$spname.db -T 8
 done
 
-cat $WD/data/haliea-genomes/*.fa > $WD/haliea-genomes.fa
-anvi-gen-contigs-database -f $WD/haliea-genomes.fa \
-                          -o $WD/HALIEA-CONTIGS.db
+cat $WD/00-halieacaea-genomes/*.fa > $WD/01-halieacaea-dbs/haliea-genomes.fa
+anvi-gen-contigs-database -f $WD/01-halieacaea-dbs/haliea-genomes.fa \
+                          -o $WD/02-halieacaea-db/HALIEA-CONTIGS.db

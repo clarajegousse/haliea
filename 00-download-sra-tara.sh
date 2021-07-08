@@ -16,6 +16,6 @@ cd $WD/00-infos
 
 cat $WD/00-infos/sra-accession.txt | while read -r acc
 do
-	echo $acc
-	fastq-dump $acc  -v --outdir $WD/00-tara-metagenomes
+	echo 'Downloading '$acc 'from SRA ...'
+	fastq-dump $acc --gzip --outdir $WD/00-tara-metagenomes
 done

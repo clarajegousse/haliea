@@ -27,7 +27,7 @@ do
 done > halieaceae-genomes-assemblies-acc.txt
 
 # download the genomes
-cat halieaceae-genomes-assemblies-acc.txt | grep "GCA\_" | grep "Complete" | sort | uniq | cut -f 3 | while read -r acc ; do
+cat halieaceae-genomes-assemblies-acc.txt | grep "GCA\_" | grep -v "Bacteria" | sort | uniq | cut -f 3 | while read -r acc ; do
   echo $acc
   esearch -db assembly -query $acc </dev/null \
     | esummary \

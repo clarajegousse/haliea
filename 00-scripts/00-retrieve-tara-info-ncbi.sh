@@ -21,9 +21,7 @@ cd $WD/00-infos
 #   grep Shotgun | grep prokaryotes
 # # PRJEB9740 PRJEB1787
 
-#echo -e "biosample_accession\ttitle\ttaxid\tstation\tmaterial_label\tlatitude\tlongitude\tdepth\ttemperature\tsalinity\tnitrate\toxygen\tsize_fraction" > biosamples.txt
-
-	  #-block Attributes -subset Attribute -if @attribute_name -equals "sample material label" -element Attribute \
+ #-block Attributes -subset Attribute -if @attribute_name -equals "sample material label" -element Attribute \
 esearch -db sra -query 'PRJEB9740[BioProject] OR PRJEB1787[BioProject]' |\
 efetch -format docsum |\
 xtract -pattern DocumentSummary -element Biosample | while read -r smp ;

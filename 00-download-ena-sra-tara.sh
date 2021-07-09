@@ -22,7 +22,7 @@ cd $WD/00-tara-metagenomes
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/000/ERR3589559/ERR3589559_1.fastq.gz
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
 
-ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/006/ERR3589556/ERR3589556_1.fastq.gz
+
 cat $WD/00-infos/sra-accessions.txt | while read -r acc
 do
 	echo 'Downloading '$acc 'from SRA ...'

@@ -25,9 +25,9 @@ cd $WD/00-tara-metagenomes
 
 cat $WD/00-infos/sra-accessions.txt | while read -r acc
 do
-	echo 'Downloading '$acc 'from SRA ...'
-	wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_1.fastq.gz'
-	wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_2.fastq.gz'
+	#echo 'Downloading '$acc 'from SRA ...'
+	echo 'wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_1.fastq.gz'
+	echo 'wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_2.fastq.gz'
 done
 
 # from NCBI SRA does not work :(

@@ -30,23 +30,17 @@ longhurst <- longhurst %>%
 #plot(longhurst)
 
 # make colour settings
+library(cmocean)
 col <- as.data.frame(cbind(longhurst$ProvCode, rep(MediumGrey, 54)))
 colnames(col) <- c("code", "value")
+#col$value <- colorRampPalette(brewer.pal(8, "Dark2"))(54)
+col$value <- colorRampPalette(flatuicolors)(54)
 
-col[col$code == "BPLR",]$value <- Jeans
-col[col$code == "APLR",]$value <- Jeans
-col[col$code == "ARCT",]$value <- Aqua
-col[col$code == "ANTA",]$value <- Aqua
-col[col$code == "ALSK",]$value <- Aqua
-col[col$code == "SARC",]$value <- Mint
-col[col$code == "SANT",]$value <- Mint
-col[col$code == "NADR",]$value <- Sunflower
-col[col$code == "NECS",]$value <- Sunflower
-col[col$code == "MEDI",]$value <- Orange
+#col[col$code == "BPLR",]$value <- Jeans
 
 # draw map with Longhurst provinces
 map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
-  #scale_fill_manual(values = col$value) +
+  scale_fill_manual(values = col$value) +
   ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces"))+
   theme(legend.position="none")+
   geom_sf_text(data = longhurst %>% group_by(ProvCode) %>% summarize(n()), aes(label = ProvCode),
@@ -65,20 +59,20 @@ colnames(df) <- c("biosample_accession", "sequencing_platform", "run_accession",
 
 
 map +  geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
-  scale_fill_manual(values = col$value) +
-  theme(legend.position="none")+
-  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces"))+
-  coord_sf(clip = "on", xlim = c(0,60), ylim = c(-50,50)) +#expand = FALSE,  
+  #scale_fill_manual(values = col$value) +
+  theme(legend.position="none") +
+  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces")) +
+  coord_sf(expand = FALSE) + #expand = FALSE,   clip = "on", xlim = c(0,60), ylim = c(-50,50)
   geom_point(aes(x = df$longitude, y = df$latitude), size = 1, color = MediumGrey, alpha = 0.5) +
   geom_text(aes(x = df$longitude, y = df$latitude, label = substr(df$station_name, 1, 8)), 
             color = DarkGrey, size = 2, hjust=0, vjust=1)
 
 df$longhurst_region <- NA
-df[df$station_name == 'TARA_030',] <- "MEDI"
-df[df$station_name == 'TARA_031',] <- "MEDI"
-df[df$station_name == 'TARA_032',] <- "REDS"
-df[df$station_name == 'TARA_033',] <- "REDS"
-df[df$station_name == 'TARA_067',] <- "MEDI"
-df[df$station_name == 'TARA_155',] <- "NADR"
+df[df$station_name == 'TARA_030',]$region <- "MEDI"
+df[df$station_name == 'TARA_031',]$region <- "MEDI"
+df[df$station_name == 'TARA_032',]$region <- "REDS"
+df[df$station_name == 'TARA_033',]$region <- "REDS"
+df[df$station_name == 'TARA_067',]$region <- "MEDI"
+df[df$station_name == 'TARA_155',]$region <- "NADR"
 
 

@@ -71,7 +71,7 @@ join sorted-wgs-runs.txt sorted-srf-biosamples.txt | sed -e 's/ /\t/g' > run-bio
 cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 20' > selected-run-biosamples-infos.txt
 
 # generate the list of sra accession numbers
-cat selected-run-biosamples-infos.txt | cut -f 3 > sra-accessions.txt
+cat selected-run-biosamples-infos.txt | cut -f 3 | sort | uniq > sra-accessions.txt
 
 # generate the corresponding samples.txt file
-cat selected-run-biosamples-infos.txt | cut -f 3,9 | awk 'BEGIN{print "sample\tr1\tr2"}{print $2 "\t" $1"_1.fastq.gz\t" $1"_2.fastq.gz"}' > samples.txt
+cat selected-run-biosamples-infos.txt | cut -f 3,9 | awk 'BEGIN{print "sample\tr1\tr2"}{print $2 "\t" $1"_1.fastq.gz\t" $1"_2.fastq.gz"}' | sort | uniq > samples.txt

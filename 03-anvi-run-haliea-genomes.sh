@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=anvi-run
+#SBATCH --job-name=anvi-run-haliea
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
@@ -23,7 +23,6 @@ mkdir -p $WD/03-haliea-db-summaries
 anvi-run-hmms -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db -T 10 --also-scan-trnas
 anvi-run-pfams -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db -T 10
 anvi-run-ncbi-cogs -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db -T 10  --sensitive
-
 
 anvi-export-gene-calls -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db --list-gene-callers
 

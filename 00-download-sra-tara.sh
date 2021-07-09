@@ -30,7 +30,6 @@ do
 	wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_2.fastq.gz'
 done
 
-
 # from NCBI SRA does not work :(
 # cat $WD/00-infos/sra-accession.txt | while read -r acc
 # do

@@ -50,7 +50,47 @@ map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", 
   ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces"))+
   theme(legend.position="none")+
   geom_sf_text(data = longhurst %>% group_by(ProvCode) %>% summarize(n()), aes(label = ProvCode),
-               colour = DarkGrey, check_overlap = TRUE)+
+               colour = DarkGrey, size = 3, check_overlap = TRUE)+
+  coord_sf(expand = FALSE) + labs(x = 'longitude', y = 'latitude')
+
+samples <- read.csv("/Users/Clara/Projects/haliea/00-infos/samples-info.txt", sep = "\t", dec = ".", header = FALSE)
+
+colnames(samples) <- c("biosample_accession", "sequencing_technology", "sequencing_platform", "platform_versions",
+                      "run_accession",  "read_count", "bases_count", "station_alias", "taxid", "station_name", "material", "sampling_date",
+                       "latitude", "longitude", "depth", "temperature", "salinity", "nitrate", "oxygen", "fraction_size")
+head(samples)
+
+samples <- samples[samples$longitude < 900, ]
+
+map +  geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
+  scale_fill_manual(values = col$value) +
+  theme(legend.position="none")+
+  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces"))+
   coord_sf(expand = FALSE) +
-  geom_point(aes(x = -55.99 , y = 61.51, colour = "red")) 
+  geom_point(aes(x = samples$longitude, y = samples$latitude), size = 1, color = MediumGrey, alpha = 0.5) + 
+  geom_text(aes(x = samples$longitude, y = samples$latitude, label = substr(samples$station_name, 6, 8)), 
+            color = DarkGrey, size = 2, hjust=0, vjust=1) +
+  labs(x = 'longitude', y = 'latitude')
+
+
+samples2 <- read.csv("/Users/Clara/Projects/haliea/00-infos/smp.txt", sep = "\t", dec = ".", header = FALSE)
+
+colnames(samples2) <- c("biosample_accession", "sample_alias", "taxid", "station_name",
+                       "sampling_date", "latitude", "longitude", "depth", "temperature", "salinity", "nitrate", "oxygen", "fraction_size")
+head(samples2)
+
+samples2 <- samples2[samples2$longitude < 100 | samples2$latitude < 100, ]
+
+map +  geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
+  scale_fill_manual(values = col$value) +
+  theme(legend.position="none")+
+  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces"))+
+  coord_sf(expand = FALSE) +
+  geom_text(aes(x = samples2$longitude, y = samples2$latitude, label = substr(samples2$station_name, 6, 8)), 
+            color = DarkGrey, size = 2, hjust=0, vjust=1) +
+  geom_point(aes(x = samples2$longitude, y = samples2$latitude), size = 1, color = MediumGrey, alpha = 0.5) +
+  geom_point(aes(x = samples$longitude, y = samples$latitude), size = 1, color = MediumGrey, alpha = 0.5) + 
+  geom_text(aes(x = samples$longitude, y = samples$latitude, label = substr(samples$station_name, 6, 8)), 
+            color = DarkGrey, size = 2, hjust=0, vjust=1)
+
 

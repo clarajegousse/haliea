@@ -15,19 +15,18 @@ echo $HOSTNAME
 source /users/home/cat3/.bashrc
 
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-infos
-
-WD=/users/home/cat3/projects/haliea
 cd $WD/00-tara-metagenomes
 
 # ENA sra structure
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/<accession-prefix>/<full-accession>/
+# ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/000/ERR3589559/ERR3589559_1.fastq.gz
+# ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
 
 cat $WD/00-infos/sra-accessions.txt | while read -r acc
 do
-	#echo 'Downloading '$acc 'from SRA ...'
-	echo 'wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_1.fastq.gz'
-	echo 'wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/000/'$acc'/'$acc'_2.fastq.gz'
+	echo 'Downloading '$acc 'from SRA ...'
+	wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_1.fastq.gz'
+	wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_2.fastq.gz'
 done
 
 # from NCBI SRA does not work :(

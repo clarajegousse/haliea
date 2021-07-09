@@ -33,8 +33,8 @@ xtract -pattern DocumentSummary -element Biosample | while read -r smp ;
 	  -block Description -element Title,Organism@taxonomy_id \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Sampling Station" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Event Date/Time End" -element Attribute \
-	  -block Attributes -subset Attribute -if @attribute_name -equals "Latitude End" -element Attribute \
-	  -block Attributes -subset Attribute -if @attribute_name -equals "Longitude End" -element Attribute \
+	  -block Attributes -subset Attribute -if @attribute_name -equals "Latitude Start" -element Attribute \
+	  -block Attributes -subset Attribute -if @attribute_name -equals "Longitude Start" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Depth" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "temperature" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Salinity Sensor" -element Attribute \

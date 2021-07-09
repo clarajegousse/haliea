@@ -18,17 +18,18 @@ conda activate anvio-master
 # go to working directory
 WD=/users/home/cat3/projects/haliea
 cd $WD
+mkdir -p $WD/04-mapping
 
-bowtie2-build haliea-genomes.fa haliea-genomes
+bowtie2-build $WD/01-halieaceae-dbs/haliea-genomes.fa $WD/04-mapping/haliea-genomes
 
 for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
     # do the bowtie mapping to get the SAM file:
     bowtie2 --threads 12 \
-            -x haliea-genomes \
-            -1 $WD/data/metagenomes/$sample-QUALITY_PASSED_R1.fastq \
-            -2 $WD/data/metagenomes/$sample-QUALITY_PASSED_R2.fastq \
+            -x $WD/04-mapping/haliea-genomes \
+            -1 $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq.gz \
+            -2 $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq.gz \
             --no-unal \
-            -S $WD/data/metagenomes/$sample.sam
+            -S $WD/01-qc-tara-metagenomes/$sample.sam
 done

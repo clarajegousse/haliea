@@ -19,9 +19,11 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-CONTIGSDB="data/haliea-isolates/*.db"
+CONTIGSDB="01-halieaceae-dbs/*.db"
+
 for cdb in $CONTIGSDB
 do
+  if [ "$cdb" == "01-halieaceae-dbs/HALIEA-CONTIGS.db" ]; then continue; fi
   echo "Processing $cdb ..."
-  anvi-run-ncbi-cogs -c $cdb -T 8 --sensitive
+  anvi-run-ncbi-cogs -c $cdb -T 8
 done

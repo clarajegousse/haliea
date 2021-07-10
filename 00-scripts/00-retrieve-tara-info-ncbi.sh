@@ -67,8 +67,8 @@ sort srf-biosamples.txt | uniq > sorted-srf-biosamples.txt
 
 join sorted-wgs-runs.txt sorted-srf-biosamples.txt | sed -e 's/ /\t/g' > run-biosamples-infos.txt
 
-# select biosamples without missing data (99999) and at latitude above 20 degree north
-cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 20' > selected-run-biosamples-infos.txt
+# select biosamples without missing data (99999) and at latitude above 10 degree north
+cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 10' > selected-run-biosamples-infos.txt
 
 # generate the list of sra accession numbers
 cat selected-run-biosamples-infos.txt | cut -f 3 | sort | uniq > sra-accessions.txt

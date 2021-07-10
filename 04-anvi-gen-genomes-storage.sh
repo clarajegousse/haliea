@@ -26,7 +26,7 @@ for cdb in $CONTIGSDB
 do
   if [ "$cdb" == "01-halieaceae-dbs/HALIEA-CONTIGS.db" ]; then continue; fi
   spname=$(echo $cdb | cut -f 2 -d "/" | cut -f 1 -d "." | sed 's/-/_/')
-  echo -e """$spname\t$WD$cdb""" >> $WD/external-genomes.txt
+  echo -e """$spname\t$WD/$cdb""" >> $WD/external-genomes.txt
 done
 
 #cat external-genomes.txt
@@ -37,6 +37,9 @@ HIS200\tMETABAT__200\tmetabat2\t/users/work/cat3/projects/mime/results/coassembl
 HIS96\tMETABAT__96\tmetabat2\t/users/work/cat3/projects/mime/results/coassembly/coassembly_wgs_surface/merge/PROFILE.db\t/users/work/cat3/projects/mime/results/coassembly/coassembly_wgs_surface/contigs.db""" > $WD/internal-genomes.txt
 
 anvi-gen-genomes-storage -e $WD/external-genomes.txt \
-  #-i data/internal-genomes.txt \
-  -o HALIEA-GENOMES.db \
+  -o 04-pan/HALIEA-GENOMES.db \
   --gene-caller 'prodigal'
+
+# anvi-pan-genome -g 04-pan/HALIEA-GENOMES.db -n HALIEA
+#
+# anvi-display-pan -p PROJECT-PAN.db -g PROJECT-PAN-GENOMES.db

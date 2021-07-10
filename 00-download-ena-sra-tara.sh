@@ -29,10 +29,10 @@ cat $WD/00-infos/sra-accessions.txt | while read -r acc ; do
 		l=$(expr length $acc)
 		if [ '$l' == 10]; then
 			echo 'Downloading '$acc'_1 from SRA ...';
-			#wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_1.fastq.gz'
+			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_1.fastq.gz'
 		else
 			echo 'Downloading '$acc'_1 from SRA ...';
-			#wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_1.fastq.gz'
+			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_1.fastq.gz'
 		fi;
 	else
 	    echo 'File '$acc'_1 found.'
@@ -43,10 +43,10 @@ cat $WD/00-infos/sra-accessions.txt | while read -r acc ; do
 		l=$(expr length $acc)
 		if [ "$l" == 10]; then
 			echo 'Downloading '$acc'_2 from SRA ...';
-			#wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_2.fastq.gz'
+			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_2.fastq.gz'
 		else
 			echo 'Downloading '$acc'_2 from SRA ...';
-			#wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_2.fastq.gz'
+			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_2.fastq.gz'
 		fi
 	else
 	    echo 'File '$acc'_2 found.'

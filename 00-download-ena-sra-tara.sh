@@ -21,13 +21,13 @@ cd $WD/00-tara-metagenomes
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/<accession-prefix>/<full-accession>/
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/000/ERR3589559/ERR3589559_1.fastq.gz
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
-
+# ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/006/ERR3589556/ERR3589556_1.fastq.gz
 
 cat $WD/00-infos/sra-accessions.txt | while read -r acc ; do
 	if [ ! -f $WD'/00-tara-metagenomes/'$acc'_1.fastq.gz' ]; then
 		echo 'File '$acc'_1 not found';
 		l=$(expr length $acc)
-		if [ '$l' == 10]; then
+		if [ "$l" == 10]; then
 			echo 'Downloading '$acc'_1 from SRA ...';
 			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_1.fastq.gz'
 		else

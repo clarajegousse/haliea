@@ -23,31 +23,30 @@ cd $WD/00-tara-metagenomes
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/006/ERR3589556/ERR3589556_1.fastq.gz
 
+
 cat $WD/00-infos/sra-accessions.txt | while read -r acc ; do
-	if [ ! -f $WD'/00-tara-metagenomes/'$acc'_1.fastq.gz' ]; then
+	l=$(expr length $acc)
+
+	if [ ! -f $WD'/00-tara-metagenomes/'$acc'_1.fastq.gz' ] && [ "$l" == 10]; then
 		echo 'File '$acc'_1 not found';
-		l=$(expr length $acc)
-		if [ "$l" == 10]; then
-			echo 'Downloading '$acc'_1 from SRA ...';
-			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_1.fastq.gz'
-		else
-			echo 'Downloading '$acc'_1 from SRA ...';
-			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_1.fastq.gz'
-		fi;
+		echo 'Downloading '$acc'_1 from SRA ...';
+		wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_1.fastq.gz'
+	elif [ ! -f $WD'/00-tara-metagenomes/'$acc'_1.fastq.gz' ] && [ "$l" == 9]; then
+		echo 'File '$acc'_1 not found';
+		echo 'Downloading '$acc'_1 from SRA ...';
+		wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_1.fastq.gz'
 	else
 	    echo 'File '$acc'_1 found.'
 	fi
 
-	if [ ! -f $WD'/00-tara-metagenomes/'$acc'_2.fastq.gz' ]; then
+	if [ ! -f $WD'/00-tara-metagenomes/'$acc'_2.fastq.gz' ] && [ "$l" == 10]; then
 		echo 'File '$acc'_2 not found';
-		l=$(expr length $acc)
-		if [ "$l" == 10]; then
-			echo 'Downloading '$acc'_2 from SRA ...';
-			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_2.fastq.gz'
-		else
-			echo 'Downloading '$acc'_2 from SRA ...';
-			wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_2.fastq.gz'
-		fi
+		echo 'Downloading '$acc'_2 from SRA ...';
+		wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/00'${acc:9:10}'/'$acc'/'$acc'_2.fastq.gz'
+	elif [ ! -f $WD'/00-tara-metagenomes/'$acc'_2.fastq.gz' ] && [ "$l" == 9]; then
+		echo 'File '$acc'_2 not found';
+		echo 'Downloading '$acc'_2 from SRA ...';
+		wget 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/'${acc:0:6}'/'$acc'/'$acc'_2.fastq.gz'
 	else
 	    echo 'File '$acc'_2 found.'
 	fi

@@ -33,9 +33,9 @@ cd $WD/00-tara-metagenomes
 
 bowtie2 --threads 12 \
 -x $WD/04-mapping/haliea-genomes \
--1 $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq.gz \
--2 $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq.gz \
+-1 $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R1.fastq.gz \
+-2 $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R2.fastq.gz \
 --no-unal \
--S $WD/01-qc-tara-metagenomes/$sample.sam
+-S $WD/01-qc-tara-metagenomes/'$sample'.sam
 ''' > $WD/01-qc-tara-metagenomes/$sample'-bowtie-pbs.sh'
 done

@@ -30,5 +30,5 @@ do
     samtools index $WD/01-qc-tara-metagenomes/$sample.bam
 
     # remove temporary files:
-    rm $WD/01-qc-tara-metagenomes/$sample.sam $WD/01-qc-tara-metagenomes/$sample-RAW.bam
+    #rm $WD/01-qc-tara-metagenomes/$sample.sam $WD/01-qc-tara-metagenomes/$sample-RAW.bam
 done

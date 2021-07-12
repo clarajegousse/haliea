@@ -17,18 +17,18 @@ WD=/users/home/cat3/projects/haliea
 cd $WD
 
 
-for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
+for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 
 	echo $sample
     # covert the resulting SAM file to a BAM file:
-    samtools view -F 4 -bS $WD/data/metagenomes/$sample.sam > $WD/data/metagenomes/$sample-RAW.bam
+    samtools view -F 4 -bS $WD/01-qc-tara-metagenomes/$sample.sam > $WD/01-qc-tara-metagenomes/$sample-RAW.bam
 
     # sort and index the BAM file:
-    samtools sort $WD/data/metagenomes/$sample-RAW.bam -o $WD/data/metagenomes/$sample.bam
-    samtools index $WD/data/metagenomes/$sample.bam
+    samtools sort $WD/01-qc-tara-metagenomes/$sample-RAW.bam -o $WD/01-qc-tara-metagenomes/$sample.bam
+    samtools index $WD/01-qc-tara-metagenomes/$sample.bam
 
     # remove temporary files:
-    rm $WD/data/metagenomes/$sample.sam $WD/data/metagenomes/$sample-RAW.bam
+    rm $WD/01-qc-tara-metagenomes/$sample.sam $WD/01-qc-tara-metagenomes/$sample-RAW.bam
 done

@@ -12,7 +12,7 @@ cd $WD/00-tara-metagenomes
 
 #iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
 
-for sample in `awk '{print $1}' $WD/01-tara-metagenomes/samples.txt`
+for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample

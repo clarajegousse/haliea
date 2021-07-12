@@ -27,4 +27,4 @@ anvi-pan-genome -g 04-pan/HALIEA-GENOMES.db \
                 --mcl-inflation 10 #--use-ncbi-blast
 
 
-# anvi-display-pan -g HALIEA-GENOMES.db -p HALIEA/Halieaceae_Pan-PAN.db --server-only -P 8080
+# anvi-display-pan -g 04-pan/HALIEA-GENOMES.db -p 04-pan/HALIEA/Halieaceae_Pan-PAN.db --server-only -P 8080

@@ -19,9 +19,9 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-anvi-pan-genome -g HALIEA-GENOMES.db \
+anvi-pan-genome -g 04-pan/HALIEA-GENOMES.db \
                 --project-name "Halieaceae_Pan" \
-                --output-dir HALIEA \
+                --output-dir 04-pan/HALIEA \
                 --num-threads 8 \
                 --minbit 0.5 \
                 --mcl-inflation 10 #--use-ncbi-blast

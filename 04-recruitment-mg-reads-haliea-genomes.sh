@@ -7,6 +7,8 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
+salloc -N 1
+ssh $SLURM_NODELIST
 echo $HOSTNAME
 
 # to insure work with python3
@@ -22,7 +24,7 @@ mkdir -p $WD/04-mapping
 
 bowtie2-build $WD/01-halieaceae-dbs/haliea-genomes.fa $WD/04-mapping/haliea-genomes
 
-for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
+for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
     # do the bowtie mapping to get the SAM file:

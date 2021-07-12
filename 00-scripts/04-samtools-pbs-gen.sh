@@ -28,7 +28,7 @@ do
 echo $HOSTNAME
 source /users/home/cat3/.bashrc
 WD=/users/home/cat3/projects/haliea
-cd $WD/01-tara-metagenomes
+cd $WD/01-qc-tara-metagenomes
 
 samtools view -F 4 -bS $WD/01-qc-tara-metagenomes/'$sample'.sam > $WD/01-qc-tara-metagenomes/'$sample'-RAW.bam
 

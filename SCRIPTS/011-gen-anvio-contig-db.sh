@@ -32,12 +32,12 @@ do
 	--simplify-names --prefix $prefix
 
 	anvi-gen-contigs-database -f $WD'/HALIEA-GENOMES/'$spname'.fa' \
-	-o $WD'/HALIEA-DB/'$prefix'.db' -T 12
+	-o $WD'/HALIEA-DB/'$prefix'.db' -T 10
 done
 
 cat $WD'/HALIEA-GENOMES/'*.fa > $WD/HALIEA-GENOMES/haliea-genomes.fa
-anvi-gen-contigs-database -f $$WD/HALIEA-GENOMES/haliea-genomes.fa \
-                          -o $WD/HALIEA-CONTIGS.db -T 8 -n 'Haliceaceae genomes'
+anvi-gen-contigs-database -f $WD/HALIEA-GENOMES/haliea-genomes.fa \
+                          -o $WD/HALIEA-CONTIGS.db -T 10 -n 'Haliceaceae genomes'
 
 anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
 	--gene-caller 'prodigal' \

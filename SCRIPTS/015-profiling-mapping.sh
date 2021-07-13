@@ -25,9 +25,9 @@ for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 
-    anvi-profile -c SAR11-CONTIGS.db \
+    anvi-profile -c HALIEA-CONTIGS.db \
                  -i $WD'/DATA-SAMPLES/'$sample'.bam' \
 				 --profile-SCVs \
-                 --num-threads 10 \
+                 --num-threads 7 \
                  -o $WD'/PROFILES'/$sample -W
 done

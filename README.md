@@ -37,7 +37,19 @@ Study of Halieaceae family
 ## 014 - Recruitment of metagenomic reads
 
 014-recruitment-mg-reads-bowtie.sh
+014-bowtie-pbs-gen.sh
+014-samtools-pbs-gen.sh
+014-profile-pbs-gen.sh
 
 ## 015 - Profiling the mapping results with anvi'o
 
 015-profiling-mapping.sh
+
+## 016 - Generating a merged anvi'o profile
+
+016-gen-merged-profile.sh
+
+
+## 017 - Generating a genomic collection
+
+017-gen-genomic-collection.sh

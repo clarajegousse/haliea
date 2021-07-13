@@ -28,4 +28,6 @@ Study of Halieaceae family
 
 ## 012 - Estimating distances between isolate genomes based on full-length 16S ribosomal RNA gene sequences
 
+012-ribosomal-rna-genes.sh
+
 ## 013 - Inferring functions with COGs

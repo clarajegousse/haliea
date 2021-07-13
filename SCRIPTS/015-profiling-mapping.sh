@@ -27,7 +27,7 @@ do
 
     anvi-profile -c SAR11-CONTIGS.db \
                  -i $WD'/DATA-SAMPLES/'$sample'.bam' \
-                 --profile-AA-frequencies \
-                 --num-threads 16 \
+				 --profile-SCVs \
+                 --num-threads 10 \
                  -o $WD'/PROFILES'/$sample -W
 done

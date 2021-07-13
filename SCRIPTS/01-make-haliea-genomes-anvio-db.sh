@@ -32,7 +32,7 @@ do
 	--simplify-names --prefix $prefix
 
 	anvi-gen-contigs-database -f $WD'/HALIEA-GENOMES/'$spname'.fa' \
-	-o $WD'/HALIEA-DB/'$prefix'.db' -T 8
+	-o $WD'/HALIEA-DB/'$prefix'.db' -T 12
 done
 
 cat $WD'/HALIEA-GENOMES/'*.fa > $WD/HALIEA-GENOMES/haliea-genomes.fa

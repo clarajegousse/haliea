@@ -19,4 +19,4 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-bowtie2-build HALIEA-GENOMES/haliea-genomes.fa   HALIEA-genome
+bowtie2-build HALIEA-GENOMES/haliea-genomes.fa HALIEA-genome

@@ -26,6 +26,4 @@ do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
     iu-filter-quality-minoche $WD/DATA-SAMPLES/$sample.ini --ignore-deflines
-	#gzip $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R1.fastq
-	#gzip $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R2.fastq
 done

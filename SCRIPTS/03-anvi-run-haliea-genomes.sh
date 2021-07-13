@@ -26,9 +26,9 @@ anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db -T 10  --sensitive
 
 anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db --list-gene-callers
 
-anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
-	--gene-caller 'prodigal' \
-	-o $WD/SUMMARIES/gene_calls_summary.txt
+
+
+# Estimating distances between isolate genomes based on full-length 16S ribosomal RNA gene sequences
 
 anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
-	--gene-caller 'Ribosomal_RNA_16S' -o $WD/03-haliea-db-summaries/Ribosomal_RNA_16S_summary.txt
+	--gene-caller 'Ribosomal_RNA_16S' -o $WD/Ribosomal_RNA_16S_summary.txt

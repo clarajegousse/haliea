@@ -33,3 +33,11 @@ Study of Halieaceae family
 ## 013 - Inferring functions with COGs
 
 013-inferring-function-cogs.sh
+
+## 014 - Recruitment of metagenomic reads
+
+014-recruitment-mg-reads-bowtie.sh
+
+## 015 - Profiling the mapping results with anvi'o
+
+015-profiling-mapping.sh

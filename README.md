@@ -14,7 +14,12 @@ Study of Halieaceae family
 
 ## 003 - Defining metagenomic sets, setting sample names, and linking those with the raw data
 
+
+
 ## 004 - Quality-filtering of raw reads
+
+004-qc-raw-reads.sh
+004-qc-raw-reads-gen-pbs.sh
 
 # 01 - Mapping metagenomic reads to Halieaceae genomes
 

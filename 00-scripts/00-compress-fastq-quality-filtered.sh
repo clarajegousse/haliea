@@ -15,10 +15,10 @@ source /users/home/cat3/.bashrc
 
 # go to working directory
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-tara-metagenomes
+cd $WD/DATA-SAMPLES
 
 
-for sample in `awk '{print $1}' samples2.txt`
+for sample in `awk '{print $1}' samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample

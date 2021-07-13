@@ -40,10 +40,9 @@ anvi-run-hmms -c HALIEA-CONTIGS.db \
  -I Ribosomal_RNA_28S -T 10
 
 anvi-run-hmms -c HALIEA-CONTIGS.db \
-  -I Bacteria_71 -T 10 --also-scan-trnas
+ -I Bacteria_71 -T 10 --also-scan-trnas
 
 anvi-summarize -c HALIEA-CONTIGS.db --just-do-it
-
 
 anvi-get-sequences-for-hmm-hits -c HALIEA-CONTIGS.db \
 	--hmm-source Ribosomal_RNA_16S \

@@ -31,3 +31,5 @@ Study of Halieaceae family
 012-ribosomal-rna-genes.sh
 
 ## 013 - Inferring functions with COGs
+
+013-inferring-function-cogs.sh

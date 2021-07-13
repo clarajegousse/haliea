@@ -7,7 +7,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
-WD=/users/home/cat3/projects/haliea/00-halieaceae-genomes
+WD=/users/home/cat3/projects/haliea/HALIEA-GENOMES
 mkdir -p $WD
 cd $WD
 

@@ -26,7 +26,7 @@ for f in $FILES
 do
 	echo "Processing $f file..."
 	spname=$(echo $f | cut -f 8 -d "/" | cut -f 1 -d ".")
-	prefix=$(echo $spname | sed 's/-/_/')
+	prefix=$(echo $spname | sed 's/-//')
 	anvi-script-reformat-fasta $f \
 	-o $WD'/00-halieaceae-genomes/'$spname'.fa' \
 	--simplify-names --prefix $prefix
@@ -37,4 +37,4 @@ done
 
 cat $WD/00-halieaceae-genomes/*.fa > $WD/01-halieaceae-dbs/haliea-genomes.fa
 anvi-gen-contigs-database -f $WD/01-halieaceae-dbs/haliea-genomes.fa \
-                          -o $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db -T 8 -n 'Haliceaceae genomes'
+                          -o $WD/HALIEA-CONTIGS.db -T 8 -n 'Haliceaceae genomes'

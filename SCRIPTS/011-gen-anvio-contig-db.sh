@@ -38,3 +38,7 @@ done
 cat $WD'/HALIEA-GENOMES/'*.fa > $WD/HALIEA-GENOMES/haliea-genomes.fa
 anvi-gen-contigs-database -f $$WD/HALIEA-GENOMES/haliea-genomes.fa \
                           -o $WD/HALIEA-CONTIGS.db -T 8 -n 'Haliceaceae genomes'
+
+anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
+	--gene-caller 'prodigal' \
+	-o $WD/gene_calls_summary.txt

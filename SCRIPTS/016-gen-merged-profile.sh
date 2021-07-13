@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=merged-pro
-#SBATCH -p normal
+#SBATCH -p short
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=cat3@hi.is

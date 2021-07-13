@@ -23,12 +23,12 @@ do
 
 	echo $sample
     # covert the resulting SAM file to a BAM file:
-    samtools view -F 4 -bS $WD/01-qc-tara-metagenomes/$sample.sam > $WD/01-qc-tara-metagenomes/$sample-RAW.bam
+    samtools view -F 4 -bS $WD/DATA-SAMPLES/$sample.sam > $WD/DATA-SAMPLES/$sample-RAW.bam
 
     # sort and index the BAM file:
-    samtools sort $WD/01-qc-tara-metagenomes/$sample-RAW.bam -o $WD/01-qc-tara-metagenomes/$sample.bam
-    samtools index $WD/01-qc-tara-metagenomes/$sample.bam
+    samtools sort $WD/DATA-SAMPLES/$sample-RAW.bam -o $WD/DATA-SAMPLES/$sample.bam
+    samtools index $WD/DATA-SAMPLES/$sample.bam
 
     # remove temporary files:
-    #rm $WD/01-qc-tara-metagenomes/$sample.sam $WD/01-qc-tara-metagenomes/$sample-RAW.bam
+    #rm $WD/DATA-SAMPLES/$sample.sam $WD/DATA-SAMPLES/$sample-RAW.bam
 done

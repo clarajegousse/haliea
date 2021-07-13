@@ -28,7 +28,7 @@ source /users/home/cat3/.bashrc
 conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/00-tara-metagenomes
-gzip $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R1.fastq
-gzip $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R2.fastq
-''' > $WD/01-qc-tara-metagenomes/$sample'-gzip-pbs.sh'
+gzip $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R1.fastq
+gzip $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R2.fastq
+''' > $WD/DATA-SAMPLES/$sample'-gzip-pbs.sh'
 done

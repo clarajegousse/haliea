@@ -8,9 +8,9 @@ conda activate anvio-master
 
 # go to working directory
 WD=/users/home/cat3/projects/haliea
-cd $WD/01-qc-tara-metagenomes
+cd $WD/DATA-SAMPLES
 
-#iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
+#iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
@@ -33,9 +33,9 @@ WD=/users/home/cat3/projects/haliea
 cd $WD
 
 anvi-profile -c 01-halieaceae-dbs/HALIEA-CONTIGS.db \
-				-i 01-qc-tara-metagenomes/'$sample'.bam \
+				-i DATA-SAMPLES/'$sample'.bam \
 				--profile-SCVs \
 				--num-threads 12 \
 				-o 04-mapping/'$sample'
-''' > $WD/01-qc-tara-metagenomes/$sample'-profile-pbs.sh'
+''' > $WD/DATA-SAMPLES/$sample'-profile-pbs.sh'
 done

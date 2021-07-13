@@ -22,6 +22,6 @@ for sample in `awk '{print $1}' samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
-	gzip $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq
-	gzip $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq
+	gzip $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R1.fastq
+	gzip $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R2.fastq
 done

@@ -30,8 +30,8 @@ do
     # do the bowtie mapping to get the SAM file:
     bowtie2 --threads 12 \
             -x $WD/04-mapping/haliea-genomes \
-            -1 $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq.gz \
-            -2 $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq.gz \
+            -1 $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R1.fastq.gz \
+            -2 $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R2.fastq.gz \
             --no-unal \
-            -S $WD/01-qc-tara-metagenomes/$sample.sam
+            -S $WD/DATA-SAMPLES/$sample.sam
 done

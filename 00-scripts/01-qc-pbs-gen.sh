@@ -10,7 +10,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-#iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
+#iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
@@ -30,6 +30,6 @@ source /users/home/cat3/.bashrc
 conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
-iu-filter-quality-minoche $WD/01-qc-tara-metagenomes/'$sample'.ini --ignore-deflines
-''' > $WD/01-qc-tara-metagenomes/$sample'-qc-pbs.sh'
+iu-filter-quality-minoche $WD/DATA-SAMPLES/'$sample'.ini --ignore-deflines
+''' > $WD/DATA-SAMPLES/$sample'-qc-pbs.sh'
 done

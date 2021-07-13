@@ -10,7 +10,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-#iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
+#iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
@@ -33,9 +33,9 @@ cd $WD/RAW-READS
 
 bowtie2 --threads 12 \
 -x $WD/04-mapping/haliea-genomes \
--1 $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R1.fastq.gz \
--2 $WD/01-qc-tara-metagenomes/'$sample'-QUALITY_PASSED_R2.fastq.gz \
+-1 $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R1.fastq.gz \
+-2 $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R2.fastq.gz \
 --no-unal \
--S $WD/01-qc-tara-metagenomes/'$sample'.sam
-''' > $WD/01-qc-tara-metagenomes/$sample'-bowtie-pbs.sh'
+-S $WD/DATA-SAMPLES/'$sample'.sam
+''' > $WD/DATA-SAMPLES/$sample'-bowtie-pbs.sh'
 done

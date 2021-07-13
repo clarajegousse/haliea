@@ -19,13 +19,13 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-iu-gen-configs samples-subset.txt -o $WD/01-qc-tara-metagenomes
+iu-gen-configs samples-subset.txt -o $WD/DATA-SAMPLES
 
 for sample in `awk '{print $1}' samples-subset.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
-    iu-filter-quality-minoche $WD/01-qc-tara-metagenomes/$sample.ini --ignore-deflines
-	#gzip $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R1.fastq
-	#gzip $WD/01-qc-tara-metagenomes/$sample-QUALITY_PASSED_R2.fastq
+    iu-filter-quality-minoche $WD/DATA-SAMPLES/$sample.ini --ignore-deflines
+	#gzip $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R1.fastq
+	#gzip $WD/DATA-SAMPLES/$sample-QUALITY_PASSED_R2.fastq
 done

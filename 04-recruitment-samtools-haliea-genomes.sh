@@ -17,7 +17,7 @@ WD=/users/home/cat3/projects/haliea
 cd $WD
 
 
-for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
+for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 

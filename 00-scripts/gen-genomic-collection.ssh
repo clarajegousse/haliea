@@ -7,10 +7,19 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
-#salloc -N 1
-#ssh $SLURM_NODELIST
+salloc -N 1
+ssh $SLURM_NODELIST
 
-for split_name in `sqlite3 HALIEA-CONTIGS.db 'select split from splits_basic_info;'`
+# to insure work with python3
+source /users/home/cat3/.bashrc
+
+conda activate anvio-master
+
+# go to working directory
+WD=/users/home/cat3/projects/haliea
+cd $WD
+
+for split_name in `sqlite3 $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db 'select split from splits_basic_info;'`
 do
     # in this loop $split_name goes through names like this: HIMB058_Contig_0001_split_00001,
     # HIMB058_Contig_0001_split_00002, HIMB058_Contig_0001_split_00003, HIMB058_Contig_0001_split_00003...; so we can extract
@@ -19,4 +28,22 @@ do
 
     # print it out with a TAB character
     echo -e "$split_name\t$MAG"
-done > SAR11-GENOME-COLLECTION.txt
+done > HALIEA-GENOME-COLLECTION.txt
+
+anvi-import-collection HALIEA-GENOME-COLLECTION.txt \
+                       -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db \
+                       -p $WD/05-merge-profile/PROFILE.db \
+                       -C Genomes
+
+anvi-summarize -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db \
+              -p $WD/05-merge-profile/PROFILE.db \
+              -C Genomes \
+              --init-gene-coverages \
+              -o HALIEA-SUMMARY
+
+
+anvi-split -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db \
+         -p $WD/05-merge-profile/PROFILE.db  \
+         -C Genomes \
+         -b HIMB083 \
+         -o HALIEA-SPLIT-GENOMES

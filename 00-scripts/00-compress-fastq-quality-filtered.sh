@@ -15,7 +15,7 @@ source /users/home/cat3/.bashrc
 
 # go to working directory
 WD=/users/home/cat3/projects/haliea
-cd $WD/DATA-SAMPLES
+cd $WD/RAW-READS
 
 
 for sample in `awk '{print $1}' samples.txt`

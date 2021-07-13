@@ -8,11 +8,11 @@ conda activate anvio-master
 
 # go to working directory
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-tara-metagenomes
+cd $WD/RAW-READS
 
 #iu-gen-configs samples.txt -o $WD/01-qc-tara-metagenomes
 
-for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
+for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 	echo $sample
@@ -29,7 +29,7 @@ echo $HOSTNAME
 source /users/home/cat3/.bashrc
 conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-tara-metagenomes
+cd $WD/RAW-READS
 
 bowtie2 --threads 12 \
 -x $WD/04-mapping/haliea-genomes \

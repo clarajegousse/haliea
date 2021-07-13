@@ -8,7 +8,7 @@ conda activate anvio-master
 
 # go to working directory
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-tara-metagenomes
+cd $WD/RAW-READS
 
 for sample in `awk '{print $1}' $WD/00-tara-metagenomes/samples.txt`
 do

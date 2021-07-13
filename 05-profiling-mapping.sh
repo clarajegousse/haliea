@@ -19,13 +19,15 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
-do
-    if [ "$sample" == "sample" ]; then continue; fi
+# for sample in `awk '{print $1}' $WD/data/metagenomes/samples.txt`
+# do
+#     if [ "$sample" == "sample" ]; then continue; fi
+#
+#     anvi-profile -c $WD/HALIEA-CONTIGS.db \
+#                  -i $WD/data/metagenomes/$sample.bam \
+# 				 --profile-SCVs \
+#                  --num-threads 12 \
+#                  -o $sample
+# done
 
-    anvi-profile -c $WD/HALIEA-CONTIGS.db \
-                 -i $WD/data/metagenomes/$sample.bam \
-				 --profile-SCVs \
-                 --num-threads 12 \
-                 -o $sample
-done
+anvi-merge /users/work/cat3/projects/haliea/04-mapping/*/PROFILE.db -o $WD/05-merge-profile -c $WD/01-halieaceae-dbs/HALIEA-CONTIGS.db

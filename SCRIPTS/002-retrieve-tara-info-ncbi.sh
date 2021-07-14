@@ -59,20 +59,25 @@ do
  done > runs.txt
 
 cat runs.txt | grep 'WGS' | grep 'paired' | cut -f 1,3,4,5,6,7 | sed 's/Illumina HiSeq /Illumina-HiSeq-/i' | grep 'Illumina-HiSeq-2*' > wgs-runs.txt
+
 sort wgs-runs.txt > sorted-wgs-runs.txt
 
 # select biosamples from the surface seawater (above 10m deep) and
 # with lower size fractions of 0.22um to target prokaryotes
-cat biosamples.txt | awk '$8 < 10 && $13 == 0.22' > srf-biosamples.txt
+cat biosamples.txt | awk '$8 < 10 && $14 == 0.22' > srf-biosamples.txt
 sort srf-biosamples.txt | uniq > sorted-srf-biosamples.txt
 
 join sorted-wgs-runs.txt sorted-srf-biosamples.txt | sed -e 's/ /\t/g' > run-biosamples-infos.txt
 
 # select biosamples without missing data (99999) and at latitude above 10 degree north
-cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 10' > selected-run-biosamples-infos.txt
+#cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 10' > selected-run-biosamples-infos.txt
+cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 <= 10 && $11 > -10' > selected-run-biosamples-infos2.txt
+
 
 # generate the list of sra accession numbers
-cat selected-run-biosamples-infos.txt | cut -f 3 | sort | uniq > sra-accessions.txt
+# cat selected-run-biosamples-infos.txt | cut -f 3 | sort | uniq > sra-accessions.txt
+cat selected-run-biosamples-infos2.txt | cut -f 3 | sort | uniq > sra-accessions2.txt
 
 # generate the corresponding samples.txt file
-cat selected-run-biosamples-infos.txt | cut -f 3,9 | awk 'BEGIN{print "sample\tr1\tr2"}{print $2 "\t" $1"_1.fastq.gz\t" $1"_2.fastq.gz"}' | sort | uniq > samples.txt
+cat selected-run-biosamples-infos2.txt | cut -f 3,9 | awk 'BEGIN{print "sample\tr1\tr2"}{print $2 "\t" $1"_1.fastq.gz\t" $1"_2.fastq.gz"}' | sort | uniq > samples2.txt
+cat samples2.txt

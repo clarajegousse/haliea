@@ -24,6 +24,8 @@ do
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
+#SBATCH --output='$sample'-samtools.%j.out
+#SBATCH --error='$sample'-samtools.%j.err
 
 echo $HOSTNAME
 source /users/home/cat3/.bashrc

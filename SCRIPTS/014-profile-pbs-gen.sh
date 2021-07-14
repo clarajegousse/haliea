@@ -24,6 +24,8 @@ do
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
+#SBATCH --output='$sample'-profile.%j.out
+#SBATCH --error='$sample'-profile.%j.err
 
 echo $HOSTNAME
 source /users/home/cat3/.bashrc

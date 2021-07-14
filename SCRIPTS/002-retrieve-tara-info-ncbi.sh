@@ -12,7 +12,7 @@ echo $HOSTNAME
 source /users/home/cat3/.bashrc
 
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-infos
+cd $WD/INFOS
 
 # # search for all TARA shotgun bioprojects focusing on prokaryotes
 # esearch -db BioProject -query TARA |\
@@ -40,6 +40,7 @@ xtract -pattern DocumentSummary -element Biosample | while read -r smp ;
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Salinity Sensor" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Nitrate Sensor" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Oxygen Sensor" -element Attribute \
+	  -block Attributes -subset Attribute -if @attribute_name -equals "Chlorophyll Sensor" -element Attribute \
 	  -block Attributes -subset Attribute -if @attribute_name -equals "Size Fraction Lower Threshold" -element Attribute
 done > biosamples.txt
 

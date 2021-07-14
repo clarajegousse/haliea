@@ -15,7 +15,7 @@ echo $HOSTNAME
 source /users/home/cat3/.bashrc
 
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-tara-metagenomes
+cd $WD/RAW-READS
 
 # ENA sra structure
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/<accession-prefix>/<full-accession>/
@@ -23,7 +23,7 @@ cd $WD/00-tara-metagenomes
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/006/ERR3589556/ERR3589556_1.fastq.gz
 
-cat $WD/00-infos/sra-accessions.txt | while read -r acc
+cat $WD/INFOS/sra-accessions.txt | while read -r acc
 do
 	echo $acc
 	l=$(expr length $acc)

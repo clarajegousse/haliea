@@ -18,7 +18,7 @@ map <- ggplot() +
 map
 
 # import longhurst provinces
-longhurst <- sf::read_sf("/Users/Clara/Projects/haliea/00-infos/longhurst-world-v4-2010.shx")
+longhurst <- sf::read_sf("/Users/Clara/Projects/haliea/INFOS/longhurst-world-v4-2010.shx")
 names(longhurst)
 head(longhurst)
 
@@ -30,16 +30,15 @@ longhurst <- longhurst %>%
 #plot(longhurst)
 
 # make colour settings
-library(cmocean)
 col <- as.data.frame(cbind(longhurst$ProvCode, rep(MediumGrey, 54)))
 colnames(col) <- c("code", "value")
 #col$value <- colorRampPalette(brewer.pal(8, "Dark2"))(54)
-col$value <- colorRampPalette(flatuicolors)(54)
+col$value <- colorRampPalette(flatUI)(54)
 
 #col[col$code == "BPLR",]$value <- Jeans
 
 # draw map with Longhurst provinces
-map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
+map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.2) +
   scale_fill_manual(values = col$value) +
   ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces"))+
   theme(legend.position="none")+
@@ -47,7 +46,7 @@ map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", 
                colour = DarkGrey, size = 3, check_overlap = TRUE)+
   coord_sf(expand = FALSE) + labs(x = 'longitude', y = 'latitude')
 
-df <- read.csv("/Users/Clara/Projects/haliea/00-infos/selected-run-biosamples-infos.txt", 
+df <- read.csv("/Users/Clara/Projects/haliea/INFOS/selected-run-biosamples-infos.txt", 
                sep = "\t", dec = ".", header = FALSE)
 df
 head(df)
@@ -75,4 +74,45 @@ df[df$station_name == 'TARA_033',]$region <- "REDS"
 df[df$station_name == 'TARA_067',]$region <- "MEDI"
 df[df$station_name == 'TARA_155',]$region <- "NADR"
 
+
+map +  geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
+  #scale_fill_manual(values = col$value) +
+  theme(legend.position="none") +
+  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces")) +
+  coord_sf(expand = FALSE) + #expand = FALSE,   clip = "on", xlim = c(0,60), ylim = c(-50,50)
+  geom_point(aes(x = df$longitude, y = df$latitude), size = 1, color = MediumGrey, alpha = 0.5) +
+  geom_text(aes(x = df$longitude, y = df$latitude, label = substr(df$station_name, 1, 8)), 
+            color = DarkGrey, size = 2, hjust=0, vjust=1)
+
+
+qc.df <- read.csv("/Users/Clara/Projects/haliea/SUMMARY/01-qc-summary.csv")
+colnames(qc.df)<- c('station_name', "number_pairs_analyzed", 
+                         "number_pairs_passed", "per_pairs_passed",
+                         "samtools_overall_aln_rate")
+
+df2 <- unique(join(df, qc.df, by = 'station_name')[c('station_name', 
+                                       'latitude', 'longitude',
+                                      'number_pairs_analyzed', 'number_pairs_passed', 
+                                       'per_pairs_passed', 'samtools_overall_aln_rate')])
+library(ggrepel)
+map + geom_sf(data = longhurst, size = .1, col = "white") +
+  theme(legend.position="none") +
+  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces")) +
+  coord_sf(expand = FALSE) +
+  geom_point(aes(x = df2$longitude, y = df2$latitude, size = df2$samtools_overall_aln_rate*100), 
+             color = MediumGrey, alpha = 0.75) +
+  geom_text_repel(aes(x = df2$longitude, y = df2$latitude, label = substr(df2$station_name, 1, 8)), 
+            color = DarkGrey, size = 2) +
+  labs(x = 'longitude', y = 'latitude', size = 'Proportion of Halieaceae reads aligned') +
+  theme(legend.position="bottom")
+
+map + geom_sf(data = longhurst, size = .1, col = "white") +
+  ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces")) +
+  coord_sf(expand = FALSE) +
+  geom_point(aes(x = df2$longitude, y = df2$latitude, size = df2$number_pairs_passed), 
+             color = MediumGrey, alpha = 0.75) +
+  geom_text_repel(aes(x = df2$longitude, y = df2$latitude, label = substr(df2$station_name, 1, 8)), 
+                  color = DarkGrey, size = 2) +
+  labs(x = 'longitude', y = 'latitude', size = 'Number of clean read pairs') +
+  theme(legend.position="bottom")
 

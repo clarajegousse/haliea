@@ -19,7 +19,7 @@ do
 	echo '''#!/bin/bash
 #SBATCH --job-name='$sample'-bowtie2
 #SBATCH -p normal
-#SBATCH --time=3-00:00:00
+#SBATCH --time=10:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
@@ -31,8 +31,8 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-bowtie2 --threads 12 \
--x $WD/04-mapping/haliea-genomes \
+bowtie2 --threads 7 \
+-x $WD/HALIEA-genome \
 -1 $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R1.fastq.gz \
 -2 $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R2.fastq.gz \
 --no-unal \

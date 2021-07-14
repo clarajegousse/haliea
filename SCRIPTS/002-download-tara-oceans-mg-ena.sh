@@ -25,7 +25,7 @@ cd $WD/RAW-READS
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR315/ERR315858/ERR315858_1.fastq.gz
 # ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR358/006/ERR3589556/ERR3589556_1.fastq.gz
 
-cat $WD/INFOS/sra-accessions2.txt | while read -r acc
+cat $WD/INFOS/sra-accessions.txt | while read -r acc
 do
 	echo $acc
 	l=$(expr length $acc)

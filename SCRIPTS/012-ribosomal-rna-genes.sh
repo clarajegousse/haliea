@@ -24,8 +24,7 @@ cd $WD
 # Ribosomal_RNA_18S, Ribosomal_RNA_23S,
 # Ribosomal_RNA_28S, Ribosomal_RNA_5S.
 
-anvi-run-hmms -c HALIEA-CONTIGS.db \
-  -I Ribosomal_RNA_12S -T 10
+anvi-run-hmms -c HALIEA-CONTIGS.db -I Ribosomal_RNA_16S -T 6
 
 anvi-run-hmms -c HALIEA-CONTIGS.db \
   -I Ribosomal_RNA_16S -T 10

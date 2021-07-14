@@ -6,8 +6,8 @@
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
-#SBATCH --output=download-sra-tara.%j.out
-#SBATCH --error=download-sra-tara.%j.err
+#SBATCH --output=002-download-tara-oceans-mg-ena.%j.out
+#SBATCH --error=002-download-tara-oceans-mg-ena.%j.err
 
 #salloc -N 1
 #ssh $SLURM_NODELIST

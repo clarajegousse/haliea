@@ -33,8 +33,13 @@ do
 	-o $WD'/HALIEA-GENOMES/'$spname'.fa' \
 	--simplify-names --prefix $prefix
 
-	anvi-gen-contigs-database -f $WD'/HALIEA-GENOMES/'$spname'.fa' \
-	-o $WD'/HALIEA-DB/'$prefix'.db' -T 10
+	# anvi-gen-contigs-database -f $WD'/HALIEA-GENOMES/'$spname'.fa' \
+	# -o $WD'/HALIEA-DB/'$prefix'.db' -T 10
+	#
+	# anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_16S -T 6 --just-do-it
+	# anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_23S -T 6 --just-do-it
+	# anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_5S -T 6 --just-do-it
+	# anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Bacteria_71 -T 6 --just-do-it
 done
 
 cat $WD'/HALIEA-GENOMES/'*.fa > $WD/HALIEA-GENOMES/haliea-genomes.fa

@@ -63,14 +63,24 @@ cd $WD/HALIEA-DB
 #
 #
 # cd
-# # generate an external genomes file
-# echo -e "name\tcontigs_db_path" > external-genomes.txt
+
 #
-# for i in *.db
-# do
-#     echo $i | awk 'BEGIN{FS="."}{print $1 "\t" $0}'
-# done >> external-genomes.txt
-#
-# anvi-compute-genome-similarity -e external-genomes.txt \
-#                  -o ani \
-#                  -T 6
+
+
+for db in *.db
+do
+	spname=$(echo "$db" | cut -d'.' -f1)
+	echo $spname
+	anvi-get-sequences-for-hmm-hits -c $db --hmm-source Ribosomal_RNA_16S -o $spname'-16S-rRNA.fa'
+done
+
+# generate an external genomes file
+echo -e "name\tcontigs_db_path" > external-genomes.txt
+for i in *.db
+do
+    echo $i | awk 'BEGIN{FS="."}{print $1 "\t" $0}'
+done >> external-genomes.txt
+
+anvi-compute-genome-similarity -e external-genomes.txt \
+                 -o ani \
+                 -T 6

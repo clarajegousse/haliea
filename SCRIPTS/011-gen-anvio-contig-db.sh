@@ -6,6 +6,8 @@
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
+#SBATCH --output=011-gen-anvio-contig-db.%j.out
+#SBATCH --error=011-gen-anvio-contig-db.%j.err
 
 echo $HOSTNAME
 

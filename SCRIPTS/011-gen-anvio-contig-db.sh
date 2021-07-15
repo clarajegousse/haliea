@@ -42,3 +42,8 @@ anvi-gen-contigs-database -f $WD/HALIEA-GENOMES/haliea-genomes.fa \
 anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
 	--gene-caller 'prodigal' \
 	-o $WD/gene_calls_summary.txt
+
+anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Ribosomal_RNA_16S -T 6 --just-do-it
+anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Ribosomal_RNA_23S -T 6 --just-do-it
+anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Ribosomal_RNA_5S -T 6 --just-do-it
+anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Bacteria_71 -T 6 --just-do-it

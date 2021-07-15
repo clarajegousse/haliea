@@ -6,6 +6,8 @@
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
+#SBATCH --output=016-gen-merged-profile.%j.out
+#SBATCH --error=016-gen-merged-profile.%j.err
 
 echo $HOSTNAME
 

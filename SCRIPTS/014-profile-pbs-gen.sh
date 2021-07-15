@@ -14,9 +14,9 @@ cd $WD/DATA-SAMPLES
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
-    if [ "$sample" == "sample" ]; then continue; fi
-	echo $sample
-	echo '''#!/bin/bash
+if [ "$sample" == "sample" ]; then continue; fi
+echo $sample
+echo '''#!/bin/bash
 #SBATCH --job-name='$sample'-profile
 #SBATCH -p normal
 #SBATCH --time=3-00:00:00
@@ -34,10 +34,10 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-anvi-profile -c 01-halieaceae-dbs/HALIEA-CONTIGS.db \
-				-i DATA-SAMPLES/'$sample'.bam \
-				--profile-SCVs \
-				--num-threads 12 \
-				-o 04-mapping/'$sample'
+anvi-profile -c $WD/HALIEA-CONTIGS.db \
+-i DATA-SAMPLES/'$sample'.bam \
+--profile-SCVs \
+--num-threads 12 \
+-o PROFILES/'$sample'
 ''' > $WD/DATA-SAMPLES/$sample'-profile-pbs.sh'
 done

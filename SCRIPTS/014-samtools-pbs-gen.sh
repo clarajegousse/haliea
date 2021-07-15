@@ -14,9 +14,9 @@ cd $WD/RAW-READS
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
-    if [ "$sample" == "sample" ]; then continue; fi
-	echo $sample
-	echo '''#!/bin/bash
+if [ "$sample" == "sample" ]; then continue; fi
+echo $sample
+echo '''#!/bin/bash
 #SBATCH --job-name='$sample'-samtools
 #SBATCH -p normal
 #SBATCH --time=3-00:00:00
@@ -40,5 +40,5 @@ samtools index $WD/DATA-SAMPLES/'$sample'.bam
 
 # remove temporary files:
 #rm $WD/DATA-SAMPLES/'$sample'.sam $WD/DATA-SAMPLES/'$sample'-RAW.bam
-''' > $WD/DATA-SAMPLES/$sample'-samtools-pbs.sh'
+''' > $WD'/DATA-SAMPLES/'$sample'-samtools-pbs.sh'
 done

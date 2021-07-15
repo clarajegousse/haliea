@@ -6,8 +6,8 @@
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
-#SBATCH --output=haliea-hmm.%j.out
-#SBATCH --error=haliea-hmm.%j.err
+#SBATCH --output=011-haliea-contig-db-hmm.%j.out
+#SBATCH --error=011-haliea-contig-db-hmm.%j.err
 
 echo $HOSTNAME
 

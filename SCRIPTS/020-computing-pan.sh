@@ -8,6 +8,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --output=020-computing-pan.%j.out
 #SBATCH --error=020-computing-pan.%j.err
+
 echo $HOSTNAME
 
 # to insure work with python3

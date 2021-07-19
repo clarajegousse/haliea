@@ -22,8 +22,8 @@ do
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
-#SBATCH --output='$sample'-compress-qc-pbs.%j.out
-#SBATCH --error='$sample'-compress-qc-pbs.%j.err
+#SBATCH --output='$sample'-gzip-pbs.%j.out
+#SBATCH --error='$sample'-gzip-pbs.%j.err
 
 echo $HOSTNAME
 source /users/home/cat3/.bashrc

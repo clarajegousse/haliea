@@ -29,7 +29,7 @@ echo $HOSTNAME
 source /users/home/cat3/.bashrc
 conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
-cd $WD/00-tara-metagenomes
+cd $WD/DATA-SAMPLES
 gzip $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R1.fastq
 gzip $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R2.fastq
 ''' > $WD/DATA-SAMPLES/$sample'-gzip-pbs.sh'

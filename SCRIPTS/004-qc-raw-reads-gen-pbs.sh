@@ -10,7 +10,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-#iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
+iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
@@ -24,8 +24,8 @@ do
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
-#SBATCH --output=004-qc-raw-reads-gen-pbs.%j.out
-#SBATCH --error=004-qc-raw-reads-gen-pbs.%j.err
+#SBATCH --output='$sample'-qc-pbs.%j.out
+#SBATCH --error='$sample'-qc-pbs.%j.err
 
 echo $HOSTNAME
 source /users/home/cat3/.bashrc

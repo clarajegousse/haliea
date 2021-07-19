@@ -24,6 +24,8 @@ do
 #SBATCH --mail-user=cat3@hi.is
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
+#SBATCH --output=004-qc-raw-reads-gen-pbs.%j.out
+#SBATCH --error=004-qc-raw-reads-gen-pbs.%j.err
 
 echo $HOSTNAME
 source /users/home/cat3/.bashrc

@@ -34,3 +34,14 @@ anvi-import-collection HALIEA-GENOME-COLLECTION.txt \
                        -c HALIEA-CONTIGS.db \
                        -p HALIEA-MERGED/PROFILE.db \
                        -C Genomes
+
+anvi-summarize -c HALIEA-CONTIGS.db \
+              -p HALIEA-MERGED/PROFILE.db \
+              -C Genomes \
+              --init-gene-coverages \
+              -o HALIEA-SUMMARY
+
+anvi-interactive -p HALIEA-MERGED/PROFILE.db \
+-c HALIEA-CONTIGS.db \
+-C Genomes \
+--server-only -P 8080

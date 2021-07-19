@@ -53,3 +53,7 @@ Study of Halieaceae family
 ## 017 - Generating a genomic collection
 
 017-gen-genomic-collection.sh
+
+# 02 - HALIEA metapangenome
+
+020-computing-pan.sh

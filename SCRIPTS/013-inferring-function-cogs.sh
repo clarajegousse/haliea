@@ -20,5 +20,4 @@ WD=/users/home/cat3/projects/haliea
 cd $WD
 
 anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db -T 10 --sensitive
-
 anvi-run-pfams -c $WD/HALIEA-CONTIGS.db -T 10

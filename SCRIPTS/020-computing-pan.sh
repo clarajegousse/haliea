@@ -21,16 +21,20 @@ WD=/users/home/cat3/projects/haliea
 cd $WD
 
 anvi-gen-genomes-storage -i internal-genomes.txt \
-                         -o HALIEA-PAN-GENOMES.h5
+                         -o HALIEA-PAN-GENOMES.db
 
-anvi-pan-genome -g HALIEA-PAN-GENOMES.h5 \
-   --use-ncbi-blast \
+anvi-pan-genome -g HALIEA-PAN-GENOMES.db \
    --minbit 0.5 \
    --mcl-inflation 2 \
-   -J HALIEA-METAPANGENOME \
-   -o HALIEA-METAPANGENOME -T 20
+   -n HALIEA-METAPANGENOME \
+   -o HALIEA-METAPANGENOME -T 6
 
-anvi-summarize -p HALIEA-PAN-PAN.db \
-               -g HALIEA-GENOMES.h5 \
-               -C default \
+      #--use-ncbi-blast \
+
+anvi-display-pan -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
+               -g HALIEA-PAN-GENOMES.db --server-only -P 8080
+
+	anvi-summarize -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
+               -g HALIEA-PAN-GENOMES.db \
+               -C genes \
                -o HALIEA-PAN-SUMMARY

@@ -33,7 +33,7 @@ cd $WD
 # 	-o $WD'/HALIEA-GENOMES/'$spname'.fa' \
 # 	--simplify-names --prefix $prefix
 #
-# 	anvi-gen-contigs-database -f $WD'/HALIEA-GENOMES/'$spname'.fa' \
+# 	anvi-gen-contigs-database -f $W	D'/HALIEA-GENOMES/'$spname'.fa' \
 # 	-o $WD'/HALIEA-DB/'$prefix'.db' -T 10
 #
 # 	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_16S -T 6 --just-do-it
@@ -47,8 +47,15 @@ cd $WD
 #                           -o $WD/HALIEA-CONTIGS.db -T 10 -n 'Haliceaceae genomes'
 
 #anvi-run-hmms -c $WD/HALIEA-CONTIGS.db --just-do-it -T 10
-anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db --num-threads 10
+# anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db --num-threads 10
+anvi-run-kegg-kofams -c $WD/HALIEA-CONTIGS.db --num-threads 10
+
+
+#anvi-export-functions -c $WD/HALIEA-CONTIGS.db \
+#	--annotation-sources Pfam -o function.txt
 
 #anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
 #	--gene-caller 'prodigal' \
 #	-o $WD/gene_calls_summary.txt
+
+	anvi-db-info HALIEA-CONTIGS.db

@@ -46,9 +46,9 @@ cd $WD
 # anvi-gen-contigs-database -f $WD/HALIEA-GENOMES/haliea-genomes.fa \
 #                           -o $WD/HALIEA-CONTIGS.db -T 10 -n 'Haliceaceae genomes'
 
-anvi-run-hmms -c $WD/HALIEA-CONTIGS.db --just-do-it -T 10
+#anvi-run-hmms -c $WD/HALIEA-CONTIGS.db --just-do-it -T 10
 anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db --num-threads 10
 
-anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
-	--gene-caller 'prodigal' \
-	-o $WD/gene_calls_summary.txt
+#anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
+#	--gene-caller 'prodigal' \
+#	-o $WD/gene_calls_summary.txt

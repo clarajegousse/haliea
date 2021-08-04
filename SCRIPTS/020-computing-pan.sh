@@ -35,7 +35,24 @@ anvi-pan-genome -g HALIEA-PAN-GENOMES.db \
 anvi-display-pan -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
                -g HALIEA-PAN-GENOMES.db --server-only -P 8080
 
-	anvi-summarize -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
+anvi-summarize -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
                -g HALIEA-PAN-GENOMES.db \
                -C genes \
                -o HALIEA-PAN-SUMMARY
+
+anvi-summarize -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
+-g HALIEA-PAN-GENOMES.db  --list-annotation-sources --list-collections --list-bins
+
+anvi-export-functions [-h] -c CONTIGS_DB [-o FILE_PATH]
+                      [--annotation-sources SOURCE NAME[S]] [-l]
+
+anvi-summarize -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db \
+-g HALIEA-PAN-GENOMES.db -C genes --list-bins
+
+anvi-delete-collection -p HALIEA-METAPANGENOME/HALIEA-METAPANGENOME-PAN.db -C genes
+
+
+COLLECTIONS FOUND
+===============================================
+* default (1 bins, representing 11673 items).
+* genes (2 bins, representing 12590 items).

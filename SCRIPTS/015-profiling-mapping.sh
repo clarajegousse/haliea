@@ -21,7 +21,7 @@ cd $WD
 
 mkdir -p $WD/PROFILES
 
-for sample in `awk '{print $1}' $WD/RAW-READS-BACKUP/samples.txt`
+for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
 
@@ -30,5 +30,4 @@ do
 	 --profile-SCVs \
 	 --num-threads 7 \
 	 -o $WD'/PROFILES'/$sample -W
-
 done

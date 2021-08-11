@@ -21,41 +21,31 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-# mkdir -p $WD/HALIEA-DB
-#
-# FILES=$WD'/HALIEA-GENOMES/'*.fna
-# for f in $FILES
-# do
-# 	echo "Processing $f file..."
-# 	spname=$(echo $f | cut -f 8 -d "/" | cut -f 1 -d ".")
-# 	prefix=$(echo $spname | sed 's/-//')
-# 	anvi-script-reformat-fasta $f \
-# 	-o $WD'/HALIEA-GENOMES/'$spname'.fa' \
-# 	--simplify-names --prefix $prefix
-#
-# 	anvi-gen-contigs-database -f $W	D'/HALIEA-GENOMES/'$spname'.fa' \
-# 	-o $WD'/HALIEA-DB/'$prefix'.db' -T 10
-#
-# 	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_16S -T 6 --just-do-it
-# 	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_23S -T 6 --just-do-it
-# 	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_5S -T 6 --just-do-it
-# 	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Bacteria_71 -T 6 --just-do-it
-# done
-#
-# cat $WD'/HALIEA-GENOMES/'*.fa > $WD/HALIEA-GENOMES/haliea-genomes.fa
-# anvi-gen-contigs-database -f $WD/HALIEA-GENOMES/haliea-genomes.fa \
-#                           -o $WD/HALIEA-CONTIGS.db -T 10 -n 'Haliceaceae genomes'
+mkdir -p $WD/HALIEA-DB
 
-#anvi-run-hmms -c $WD/HALIEA-CONTIGS.db --just-do-it -T 10
-# anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db --num-threads 10
-anvi-run-kegg-kofams -c $WD/HALIEA-CONTIGS.db --num-threads 10
+FILES=$WD'/HALIEA-GENOMES/'*.fna
+for f in $FILES
+do
+	echo "Processing $f file..."
+	spname=$(echo $f | cut -f 8 -d "/" | cut -f 1 -d ".")
+	prefix=$(echo $spname | sed 's/-//')
+	anvi-script-reformat-fasta $f \
+	-o $WD'/HALIEA-GENOMES/'$spname'.fa' \
+	--simplify-names --prefix $prefix
 
+	anvi-gen-contigs-database -f $W	D'/HALIEA-GENOMES/'$spname'.fa' \
+	-o $WD'/HALIEA-DB/'$prefix'.db' -T 10
 
-#anvi-export-functions -c $WD/HALIEA-CONTIGS.db \
-#	--annotation-sources Pfam -o function.txt
+	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_16S -T 6 --just-do-it
+	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_23S -T 6 --just-do-it
+	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Ribosomal_RNA_5S -T 6 --just-do-it
+	anvi-run-hmms -c $WD'/HALIEA-DB/'$prefix'.db' -I Bacteria_71 -T 6 --just-do-it
+done
 
-#anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
-#	--gene-caller 'prodigal' \
-#	-o $WD/gene_calls_summary.txt
+cat $WD'/HALIEA-GENOMES/'*.fa > $WD/HALIEA-GENOMES/haliea-genomes.fa
+anvi-gen-contigs-database -f $WD/HALIEA-GENOMES/haliea-genomes.fa \
+                          -o $WD/HALIEA-CONTIGS.db -T 10 -n 'Haliceaceae genomes'
 
-	anvi-db-info HALIEA-CONTIGS.db
+anvi-export-gene-calls -c $WD/HALIEA-CONTIGS.db \
+	--gene-caller 'prodigal' \
+	-o $WD/gene_calls_summary.txt

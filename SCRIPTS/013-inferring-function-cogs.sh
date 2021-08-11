@@ -19,5 +19,12 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD
 
-anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db -T 10 --sensitive
+anvi-run-hmms -c $WD/HALIEA-CONTIGS.db --just-do-it -num-threads 10
+anvi-run-ncbi-cogs -c $WD/HALIEA-CONTIGS.db -num-threads 10 --sensitive
+anvi-run-kegg-kofams -c $WD/HALIEA-CONTIGS.db --num-threads 10
 anvi-run-pfams -c $WD/HALIEA-CONTIGS.db -T 10
+
+anvi-db-info HALIEA-CONTIGS.db
+
+# anvi-export-functions -c $WD/HALIEA-CONTIGS.db \
+# 	--annotation-sources COG20_CATEGORY,COG20_PATHWAY,KEGG_Module,KOfam,Pfam -o function.txt

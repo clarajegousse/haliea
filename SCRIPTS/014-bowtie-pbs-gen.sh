@@ -10,8 +10,6 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-#iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
-
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do
     if [ "$sample" == "sample" ]; then continue; fi
@@ -33,7 +31,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/RAW-READS
 
-bowtie2 --threads 7 \
+bowtie2 --threads 8 \
 -x $WD/HALIEA-genome \
 -1 $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R1.fastq.gz \
 -2 $WD/DATA-SAMPLES/'$sample'-QUALITY_PASSED_R2.fastq.gz \

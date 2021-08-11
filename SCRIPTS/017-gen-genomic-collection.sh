@@ -10,7 +10,7 @@
 echo $HOSTNAME
 
 # to insure work with python3
-source /users/home/cat3/.bashrc
+	source /users/home/cat3/.bashrc
 
 # activate environment
 conda activate anvio-master
@@ -45,3 +45,7 @@ anvi-interactive -p HALIEA-MERGED/PROFILE.db \
 -c HALIEA-CONTIGS.db \
 -C Genomes \
 --server-only -P 8080
+
+
+anvi-export-splits-and-coverages -p HALIEA-MERGED/PROFILE.db \
+                                 -c HALIEA-CONTIGS.db -o coverage

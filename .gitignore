@@ -6,4 +6,9 @@
 *.fasta
 *.fasta.gz
 *.numbers
+*.tsv
+*.bam
+*.RData
+*.Rhistory
+*.png
 LIT/*

@@ -10,7 +10,7 @@ conda activate anvio-master
 WD=/users/home/cat3/projects/haliea
 cd $WD/DATA-SAMPLES
 
-#iu-gen-configs samples.txt -o $WD/DATA-SAMPLES
+# ls | grep profile-pbs | sed 's/TARA_/sbatch TARA_/i'
 
 for sample in `awk '{print $1}' $WD/RAW-READS/samples.txt`
 do

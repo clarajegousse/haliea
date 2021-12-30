@@ -34,7 +34,6 @@ longhurst <- longhurst %>%
   dplyr::summarise()
 #plot(longhurst)
 
-
 # draw map with Longhurst provinces
 map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha = .25) +
   ggtitle(paste("Longhurst Biogeochemical Provinces -", length(unique(longhurst$ProvCode)),"provinces")) +
@@ -52,7 +51,7 @@ colnames(df) <- c("biosample_accession", "sequencing_platform", "run_accession",
                   "total_reads", "total_counts", "library_strategy", "sample_alias",
                   "taxid", "station_name", "sampling_date", "latitude", "longitude", "depth", 
                   "temperature", "salinity", "nitrate", "oxygen", "chlorophyll", "lower_size_fraction")
-
+df <- unique(df)
 
 map + geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha=.4) +
   #scale_fill_manual(values = col$value) +
@@ -132,8 +131,13 @@ df[df$station_name == 'TARA_209',]$longhurst_region <- "BPLR"
 df[df$station_name == 'TARA_210',]$longhurst_region <- "ARCT"
 
 
+longh <- read.csv("/Users/Clara/Projects/haliea/INFOS/longhurst_regions.tsv", sep = '\t')
+
+df <- merge(df, longh, by.x = 'longhurst_region', by.y = 'longhurst_code')
+
+
 df <- df %>%
-  group_by(station_name, sampling_date, longhurst_region, latitude, longitude, depth, temperature, salinity, nitrate, oxygen, chlorophyll) %>%
+  group_by(station_name, sampling_date, longhurst_region, province_name, ocean, biome, latitude, longitude, depth, temperature, salinity, nitrate, oxygen, chlorophyll) %>%
   dplyr::summarise(total_reads = sum(total_reads), nb_runs = n())
 mtdt.df <- as.data.frame(df)
 rownames(mtdt.df) <- mtdt.df$station_name
@@ -141,7 +145,6 @@ rownames(mtdt.df) <- mtdt.df$station_name
 # write a csv file
 write.table(mtdt.df, file = "/Users/Clara/Projects/haliea/INFOS/metadata.csv", sep = ",",
         na = "NA", dec = ".")
-
 
 map +  geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white", alpha = .25) +
   #scale_fill_manual(values = col$value) +
@@ -151,7 +154,6 @@ map +  geom_sf(data = longhurst, aes(fill = ProvCode), size = .1, col = "white",
   geom_point(aes(x = df$longitude, y = df$latitude), size = 1, color = MediumGrey, alpha = 0.5) +
   geom_text(aes(x = df$longitude, y = df$latitude, label = substr(df$station_name, 1, 8)), 
             color = DarkGrey, size = 2, hjust=0, vjust=1)
-
 
 qc.df <- read.csv("/Users/Clara/Projects/haliea/SUMMARY/01-qc-summary.csv")
 colnames(qc.df)<- c('station_name', "number_pairs_analyzed", 

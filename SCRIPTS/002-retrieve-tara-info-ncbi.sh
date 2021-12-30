@@ -70,7 +70,7 @@ sort srf-biosamples.txt | uniq > sorted-srf-biosamples.txt
 join sorted-wgs-runs.txt sorted-srf-biosamples.txt | sed -e 's/ /\t/g' > run-biosamples-infos.txt
 
 # select biosamples without missing data (99999) and at latitude above 10 degree north
-#cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 10' > selected-run-biosamples-infos.txt
+# cat run-biosamples-infos.txt | grep -v 99999 |  awk '$11 > 10' > selected-run-biosamples-infos.txt
 
 # all samples worldwide
 cat run-biosamples-infos.txt | grep -v 99999 > selected-run-biosamples-infos.txt

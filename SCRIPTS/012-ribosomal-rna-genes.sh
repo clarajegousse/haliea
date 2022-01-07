@@ -22,7 +22,7 @@ cd $WD/HALIEA-DB
 anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Ribosomal_RNA_16S -T 6 --just-do-it
 anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Ribosomal_RNA_23S -T 6 --just-do-it
 anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Ribosomal_RNA_5S -T 6 --just-do-it
-anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Bacteria_71 -T 6  --also-scan-trnas --just-do-it
+anvi-run-hmms -c $WD/HALIEA-CONTIGS.db -I Bacteria_71 -T 6 --also-scan-trnas --just-do-it
 
 anvi-get-sequences-for-hmm-hits -c HALIEA-CONTIGS.db \
 	--hmm-source Ribosomal_RNA_16S \

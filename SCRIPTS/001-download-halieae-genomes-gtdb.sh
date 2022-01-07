@@ -7,43 +7,56 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 
+# to insure work with python3
+source /users/home/cat3/.bashrc
+
+# conda create --name haliea
+conda activate haliea
+
+
 WD=/users/home/cat3/projects/haliea/HALIEA-GENOMES
 mkdir -p $WD
 cd $WD
 
-esearch -db taxonomy -query "txid1706372[Subtree]" |\
- efetch -format xml |\
- xtract -pattern Taxon \
- 	-element TaxId,ScientificName > taxids.txt
+# get the list of genomes
+# that belongs to the Halieaceae family in the GTDB
+# query "GTDB Taxonomy" CONTAINS "f__Halieaceae"
+# https://gtdb.ecogenomic.org
 
-# get the assembly accession numbers for the list of taxid
-cat taxids.txt | cut -f 1 | while read -r taxid;
-do
-  esearch -db genome -query "txid"$taxid"[Organism:exp]" </dev/null |\
-    efetch -format docsum |\
-    xtract -pattern DocumentSummary \
-      -element TaxId,Organism_Name,Assembly_Accession,Status;
-  #esearch -db genome -query "txid"$taxid"[Organism:exp]"
-done > assemblies.txt
+LIST=/users/home/cat3/projects/haliea/INFOS/gtdb_halieaceae.tsv
 
-# download the genomes
-cat assemblies.txt | grep "GCA\_" | grep -v "Bacteria" | sort | uniq | cut -f 3 | while read -r acc ; do
+# --- Download the genomes ----
+
+cat $LIST | cut -f 1 | grep -v "organism_name" | while read -r acc ; do
   echo $acc
   esearch -db assembly -query $acc </dev/null \
     | esummary \
     | xtract -pattern DocumentSummary -element FtpPath_GenBank \
     | while read -r url ;
       do
-      #echo "$url/$fname"
+	  # build the url
+      # echo "$url/$fname"
       fname=$(echo $url | grep -o 'GCA_.*' | sed 's/$/_genomic.fna.gz/') ;
-      #echo $fname
+
+	  # download file from url
+	  # echo $fname
       wget "$url/$fname"
-      spname=$(zcat $fname | grep ">" | head -1 | cut -f 2,3 -d " " | sed 's/\ /-/i')
-      #echo $spname
-      zcat $fname > $spname.fna
-      rm -f $fname
     done
 done
 
-# clean up
-rm -f *.fna.gz; rm -f index.html*
+# --- dereplication ----
+
+checkm -h
+checkm data setRoot /users/work/cat3/db/gtdbk
+dRep dereplicate $WD/DREP -g $WD/*.fna.gz -d
+
+
+# /users/home/cat3/miniconda3/lib/python3.8/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+#   import pandas.util.testing as tm
+# ***************************************************
+#     ..:: dRep dereplicate Step 1. Filter ::..
+# ***************************************************
+#
+# Will filter the genome list
+# 117 genomes were input to dRep
+# Calculating genome info of genomes
